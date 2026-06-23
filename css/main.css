@@ -1,0 +1,151 @@
+/* Main / Misc. CSS */
+body {
+    margin: 0px;
+}
+
+p {
+    font-family: "Dogica";
+    font-size: 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-body {
+    display: flex;
+    position: relative;
+    top: 100px;
+    gap: 10px;
+    justify-content: center;
+
+}
+
+.container-main {
+    position: relative;
+    width: 560px;
+    z-index: 1;
+    border-radius: 5px;
+    gap: 10px;
+}
+
+.container-left {
+    position: relative;
+    
+    width: 225px;
+    z-index: 1;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-right {
+    position: relative;
+    width: 225px;
+    z-index: 1;
+    background-color: #F4F3EF;
+    padding: 20px;
+    box-shadow: 10px 5px 5px rgb(0, 0, 0, 50%);
+}
+
+.backdrop {
+    float: left;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+@font-face {
+    font-family: "Dogica";
+    src: url(../fonts/dogica.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes pan-text {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.bubble {
+    z-index: 1;
+    background-color: #F4F3EF;
+    padding: 20px;
+    box-shadow: 10px 5px 5px rgb(0, 0, 0, 50%);
+}
+
+/* Header CSS */
+
+.mercury-header-gif {
+    max-width: 200px;
+    height: 200px;
+    rotate: -10deg;
+    position: absolute;
+    top: -120px;
+    left: -60px;
+}
+
+.header-title {
+    position: relative;
+    top: -30px;
+    right: -130px;
+    font-family: "Jacquard 12";
+}
+
+.random-facts {
+    width: 520px;
+    overflow: hidden;
+    position: relative;
+    top: -25px;
+}
+
+.random-facts span {
+    display: inline-block;
+    white-space: nowrap;
+    animation: pan-text 10s linear infinite;
+    font-family: "Dogica";
+    font-size: 10px;
+}
+
+/* On REPEAT! */
+.musical-notes {
+    position: absolute;
+    top: -40px;
+    right: -50px;
+    rotate: 5deg;
+    max-width: 100px;
+}
+
+.top-3-albums {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-cover {
+    max-width: 230px;
+}
+
+.album p {
+    font-size: 8px;;
+}
+
+/* Left-hand side */
+
+.buttons {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+}
