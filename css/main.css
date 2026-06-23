@@ -20,7 +20,7 @@ p {
 .main-body {
     display: flex;
     position: relative;
-    top: 100px;
+    top: px;
     gap: 10px;
     justify-content: center;
 
@@ -86,6 +86,17 @@ p {
 }
 
 /* Header CSS */
+
+.splash-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.splash-image {
+    width: 500px;
+    height: auto;
+}
 
 .mercury-header-gif {
     max-width: 200px;
