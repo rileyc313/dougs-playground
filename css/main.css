@@ -8,6 +8,12 @@ p {
     font-size: 10px;
 }
 
+.red-strike-through {
+    text-decoration: line-through;
+    text-decoration-color: rgb(180, 2, 2);
+    text-decoration-thickness: 3px;
+}
+
 .flex {
     display: flex;
 }
@@ -110,8 +116,13 @@ p {
 .header-title {
     position: relative;
     top: -30px;
-    right: -130px;
+    right: -90px;
     font-family: "Jacquard 12";
+}
+
+.header-title-post-strike-through {
+    font-family: dogica;
+    font-size: 15px;
 }
 
 .random-facts {
@@ -159,4 +170,24 @@ p {
     gap: 10px;
     grid-template-columns: repeat(2, auto);
     justify-content: center;
+}
+
+/* Blogs */
+ .blog-preview-text {
+    font-size: 8px;
+    color: rgb(134, 134, 134);
+ }
+
+/* Footer */
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
 }
