@@ -188,6 +188,16 @@ const albums = [
     topTrack: "The Summer",
     color: "#950B0D"
   }
+  ,
+  {
+    cover: "../img/solongforever.jpg",
+    artist: "Palace",
+    title: "So Long Forever",
+    runtime: "42 Minutes",
+    genres: "Indie Rock, Feel-good",
+    topTrack: "It's Over",
+    color: "#259164"
+  }
 ];
 const container = document.getElementById("top-3-albums");
 const upload = document.getElementById("imageUpload");
@@ -206,42 +216,49 @@ upload.addEventListener("change", (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    const img = new Image();
-    img.onload = () => {
-        const pixelSize = 8;
+    const reader = new FileReader();
 
-        const smallCanvas = document.createElement("canvas");
-        const smallCtx = smallCanvas.getContext("2d");
+    reader.onload = (event) => {
+        const img = new Image();
 
-        smallCanvas.width = Math.floor(img.width / pixelSize);
-        smallCanvas.height = Math.floor(img.height / pixelSize);
+        img.onload = () => {
+            const pixelSize = 8;
 
-        smallCtx.drawImage(
-            img,
-            0,
-            0,
-            smallCanvas.width,
-            smallCanvas.height
-        );
+            const smallCanvas = document.createElement("canvas");
+            const smallCtx = smallCanvas.getContext("2d");
 
-        canvas.width = img.width;
-        canvas.height = img.height;
+            smallCanvas.width = Math.floor(img.width / pixelSize);
+            smallCanvas.height = Math.floor(img.height / pixelSize);
 
-        ctx.imageSmoothingEnabled = false;
-        ctx.drawImage(
-            smallCanvas,
-            0,
-            0,
-            smallCanvas.width,
-            smallCanvas.height,
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
+            smallCtx.drawImage(
+                img,
+                0,
+                0,
+                smallCanvas.width,
+                smallCanvas.height
+            );
+
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            ctx.imageSmoothingEnabled = false;
+            ctx.drawImage(
+                smallCanvas,
+                0,
+                0,
+                smallCanvas.width,
+                smallCanvas.height,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+        };
+
+        img.src = event.target.result;
     };
 
-    img.src = URL.createObjectURL(file);
+    reader.readAsDataURL(file);
 });
 
 randomAlbum.forEach(album => {

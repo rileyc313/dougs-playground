@@ -8,6 +8,12 @@ p {
     font-size: 10px;
 }
 
+p,
+span,
+div {
+    line-height: 2;
+}
+
 .red-strike-through {
     text-decoration: line-through;
     text-decoration-color: rgb(180, 2, 2);
@@ -172,12 +178,29 @@ p {
     justify-content: center;
 }
 
+.doggo-pic {
+    width: 100%;
+}
+
 /* Blogs */
 
  .blog-preview-text {
     font-size: 8px;
     color: rgb(134, 134, 134);
  }
+
+.photos-preview {
+    column-count: 2;
+    column-gap: 10px;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
 
 /* Duke Section */
 
@@ -257,7 +280,8 @@ p {
 .footer-container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    place-items: center;
     margin-top: 200px;
 }
 
