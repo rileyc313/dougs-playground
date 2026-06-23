@@ -31,11 +31,9 @@ div {
 
 .main-body {
     display: flex;
-    position: relative;
-    top: px;
     gap: 10px;
     justify-content: center;
-
+    align-items: flex-start;
 }
 
 .container-main {
@@ -92,9 +90,17 @@ div {
 
 .bubble {
     z-index: 1;
-    background-color: #F4F3EF;
+    background: #C0C0C0; /* classic Win95 gray */
     padding: 20px;
-    box-shadow: 10px 5px 5px rgb(0, 0, 0, 30%);
+
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+
+    box-shadow:
+        inset 1px 1px 0 #DFDFDF,
+        inset -1px -1px 0 #404040;
 }
 
 /* Header CSS */
@@ -206,11 +212,11 @@ div {
 
 .duke-section {
     display: flex;
-    gap: 10px;
     width: 100%;
 }
 .beside-duke {
-    width: 36%;
+    width: 100%;
+    height: auto;
 }
 
 .beside-duke input[type="file"] {
@@ -261,7 +267,7 @@ div {
 
     margin-top: 15px;
 
-    width: 250px;
+    width: 100%;
     height: auto;
 
     image-rendering: pixelated;
@@ -288,4 +294,164 @@ div {
 .footer {
     display: flex;
     flex-direction: row;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .main-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .container-left,
+    .container-main {
+        display: contents;
+    }
+
+    .container-right {
+        width: 100%;
+        max-width: 600px;
+        box-sizing: border-box;
+        order: 7;
+    }
+
+    .bubble,
+    .duke-section {
+        width: 100%;
+        max-width: 600px;
+        box-sizing: border-box;
+    }
+
+    /* Welcome */
+    .resources {
+        order: 1;
+    }
+
+    /* Blogs */
+    .blogs {
+        order: 2;
+    }
+
+    /* Gallery */
+    .gallery {
+        order: 3;
+    }
+
+    /* Current Mood */
+    .container-left > .bubble:nth-of-type(2) {
+        order: 4;
+    }
+
+    /* Live Chat */
+    .live-chat {
+        order: 5;
+    }
+
+    /* Puppy Picture */
+    .container-left > .bubble:nth-of-type(4) {
+        order: 6;
+    }
+
+    /* Music recommendations */
+    .container-right {
+        order: 7;
+    }
+
+    /* Image Pixelizer */
+    .duke-section {
+        order: 8;
+    }
+
+    /* Inspiration box (optional) */
+    .container-left > .bubble:last-child {
+        order: 9;
+    }
+
+    /* 88x31 buttons */
+    .buttons {
+        display: grid;
+        order: 10;
+    }
+
+    /* Header tweaks */
+
+    .header {
+        order: -1;
+        width: 100%;
+        max-width: 600px;
+        padding-top: 20px;
+    }
+
+    .mercury-header-gif {
+        position: static;
+        display: block;
+        margin: 0 auto 15px auto;
+        width: 120px;
+        height: auto;
+        rotate: 0deg;
+    }
+
+    .header-title {
+        position: static;
+        text-align: center;
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .header-title-post-strike-through {
+        font-size: 12px;
+    }
+
+    .random-facts {
+        width: 100%;
+        top: 0;
+    }
+
+    /* Gallery */
+
+    .photos-preview {
+        column-count: 1;
+    }
+
+    /* Splash image */
+
+    .splash-image {
+        width: 95%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    /* Music section */
+
+    .musical-notes {
+        display: none;
+    }
+
+    .album-cover {
+        max-width: 300px;
+    }
+
+    /* Text */
+
+    p {
+        font-size: 8px;
+    }
+
+    .blog-preview-text {
+        font-size: 7px;
+    }
+
+    /* Footer */
+
+    .footer-container {
+        margin-top: 50px;
+    }
 }
