@@ -389,12 +389,22 @@ ol {
         margin: 0;
     }
 
+    .d3-button {
+        order: -1;
+        display: flex;
+        width: 100%;
+    }
+
     .header {
         order: 1;
     }
 
     .resources {
         order: 2;
+    }
+
+    .d-banner-container {
+        order 2
     }
 
     .container-left > .bubble:nth-of-type(2) {
@@ -644,4 +654,12 @@ background: #C0C0C0;
 
 .bubble-fitted-image {
     width: 100%;
+}
+
+.operator {
+  color: #ca1c0c;  
+}
+
+.scanner {
+    color: #b98f24;
 }
