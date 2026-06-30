@@ -53,7 +53,7 @@ const facts = [
 
 const albums = [
   {
-    cover: "../img/whatliesaheadofme.jpg",
+    cover: "../img/albums/whatliesaheadofme.jpg",
     artist: "All Under Heaven",
     title: "What Lies Ahead of Me",
     runtime: "32 Minutes",
@@ -62,7 +62,7 @@ const albums = [
     color: "#e46c82"
   },
   {
-    cover: "../img/muchlove.jpg",
+    cover: "../img/albums/muchlove.jpg",
     artist: "Microwave",
     title: "Much Love",
     runtime: "38 Minutes",
@@ -71,7 +71,7 @@ const albums = [
     color: "#EE6C4A"
   },
   {
-    cover: "../img/youdpreferanastronaut.jpg",
+    cover: "../img/albums/youdpreferanastronaut.jpg",
     artist: "HUM",
     title: "You'd Prefer an Astronaut",
     runtime: "46 Minutes",
@@ -80,7 +80,7 @@ const albums = [
     color: "#3bb349"
   },
   {
-    cover: "../img/shed.jpg",
+    cover: "../img/albums/shed.jpg",
     artist: "Title Fight",
     title: "Shed",
     runtime: "27 Minutes",
@@ -90,7 +90,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/floralgreen.jpg",
+    cover: "../img/albums/floralgreen.jpg",
     artist: "Title Fight",
     title: "Floral Green",
     runtime: "32 Minutes",
@@ -100,7 +100,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/inlet.jpg",
+    cover: "../img/albums/inlet.jpg",
     artist: "HUM",
     title: "Inlet",
     runtime: "55 Minutes",
@@ -110,7 +110,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/betweentherichness.jpg",
+    cover: "../img/albums/betweentherichness.jpg",
     artist: "Fiddlehead",
     title: "Between The Richness",
     runtime: "25 Minutes",
@@ -120,7 +120,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/superheaven.jpg",
+    cover: "../img/albums/superheaven.jpg",
     artist: "Superheaven",
     title: "Superheaven",
     runtime: "31 Minutes",
@@ -130,7 +130,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/jar.jpg",
+    cover: "../img/albums/jar.jpg",
     artist: "Superheaven",
     title: "Jar",
     runtime: "41 Minutes",
@@ -140,7 +140,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/stovall.jpg",
+    cover: "../img/albums/stovall.jpg",
     artist: "Microwave",
     title: "Stovall",
     runtime: "38 Minutes",
@@ -150,7 +150,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/promiseeverything.jpg",
+    cover: "../img/albums/promiseeverything.jpg",
     artist: "Basement",
     title: "Promise Everything",
     runtime: "28 Minutes",
@@ -160,7 +160,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/besidemyself.jpg",
+    cover: "../img/albums/besidemyself.jpg",
     artist: "Basement",
     title: "Beside Myself",
     runtime: "38 Minutes",
@@ -170,7 +170,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/colourmeinkindness.jpg",
+    cover: "../img/albums/colourmeinkindness.jpg",
     artist: "Basement",
     title: "Colourmeinkindness",
     runtime: "33 Minutes",
@@ -180,7 +180,7 @@ const albums = [
   }
   ,
   {
-    cover: "../img/youth.jpg",
+    cover: "../img/albums/youth.jpg",
     artist: "Citizen",
     title: "Youth",
     runtime: "30 Minutes",
@@ -190,13 +190,71 @@ const albums = [
   }
   ,
   {
-    cover: "../img/solongforever.jpg",
+    cover: "../img/albums/solongforever.jpg",
     artist: "Palace",
     title: "So Long Forever",
     runtime: "42 Minutes",
     genres: "Indie Rock, Feel-good",
     topTrack: "It's Over",
     color: "#259164"
+  },
+  {
+    cover: "../img/albums/iletitinandittookeverything.jpg",
+    artist: "Loathe",
+    title: "I Let It In And It Took Everything",
+    runtime: "49 Minutes",
+    genres: "Metal, Hard Rock, Rock",
+    topTrack: "A Sad Cartoon",
+    color: "#000000"
+  }
+  ,
+  {
+    cover: "../img/albums/werenotheretobeloved.jpeg",
+    artist: "Fleshwater",
+    title: "We're Not Here to Be Loved",
+    runtime: "27 Minutes",
+    genres: "Hard Rock, Indie Rock",
+    topTrack: "Linda Claire",
+    color: "#E09B2F"
+  }
+  ,
+  {
+    cover: "../img/albums/peoplewatching.jpg",
+    artist: "156/Silence",
+    title: "People Watching",
+    runtime: "46 Minutes",
+    genres: "Metal, Hard Rock",
+    topTrack: "Target Acquired",
+    color: "#84561F"
+  }
+  ,
+  {
+    cover: "../img/albums/thefearoffear.png",
+    artist: "Spiritbox",
+    title: "The Fear of Fear",
+    runtime: "25 Minutes",
+    genres: "Metal, Hard Rock",
+    topTrack: "Too Close/Too Late",
+    color: "#402A47"
+  },
+  {
+    cover: "../img/albums/yunemogarden.jpg",
+    artist: "Last Dinosaurs",
+    title: "Yunemo Garden",
+    runtime: "37 Minutes",
+    genres: "Indie Pop, Bedroom Pop",
+    topTrack: "Bass God",
+    color: "#485DA9"
+  }
+  ,
+  {
+    cover: "../img/albums/nownotyet.jpg",
+    artist: "half•alive",
+    title: "Now, Not Yet",
+    runtime: "41 Minutes",
+    genres: "Indie Pop, Bedroom Pop",
+    topTrack: "Arrow",
+    color: "#D44F30"
   }
 ];
 const container = document.getElementById("top-3-albums");
