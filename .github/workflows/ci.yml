@@ -1,23 +1,23 @@
 name: Deploy to neocities
-
 on:
   push:
     branches:
       - main
-
 concurrency:
   group: deploy-to-neocities
   cancel-in-progress: true
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
+    - name: Stage site files
+      run: |
+        mkdir -p _site
+        rsync -av --exclude='.git' --exclude='.github' --exclude='_site' ./ _site/
     - name: Deploy to neocities
-      uses: bcomnes/deploy-to-neocities@v1
+      uses: bcomnes/deploy-to-neocities@v3
       with:
         api_token: ${{ secrets.NEOCITIES_API_KEY }}
         cleanup: false
-        dist_dir: public
+        dist_dir: _site

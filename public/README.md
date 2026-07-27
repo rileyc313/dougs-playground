@@ -1,2 +1,0 @@
-# mercury
-Personal webpage :)
