@@ -103,6 +103,16 @@ ol {
     }
 }
 
+.invis {
+    visibility: hidden;
+}
+
+.invis-bubble {
+    z-index: 1;
+    background: rgba(0, 0, 0, 0%);
+    padding: 20px;
+}
+
 .bubble {
     z-index: 1;
     background: #a39c92;
@@ -116,6 +126,10 @@ ol {
     box-shadow:
         inset 1px 1px 0 #DFDFDF,
         inset -1px -1px 0 #404040;
+}
+
+.last-bubble {
+    padding-right: 15px;
 }
 
 .bubble-no-border {
@@ -230,16 +244,6 @@ ol {
     display: flex;
     gap: 10px;
     justify-content: right;
-}
-
-.mobile-icons > .bubble {
-    flex: 1 1 calc(50% - 5px);
-    max-width: calc(50% - 5px);
-}
-
-.mobile-icons > .bubble:only-child {
-    flex: 0 1 auto;
-    max-width: 28%;
 }
 
 .tricorn {

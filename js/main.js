@@ -256,6 +256,46 @@ const albums = [
     topTrack: "Arrow",
     color: "#D44F30"
   }
+  ,
+  {
+    cover: "../img/albums/invitationtohers.jpg",
+    artist: "Her's",
+    title: "Invitation To Her's",
+    runtime: "45 Minutes",
+    genres: "Indie Pop, Bedroom Pop, Feel-good",
+    topTrack: "Under Wraps",
+    color: "#982A73"
+  }
+  ,
+  {
+    cover: "../img/albums/songsofhers.jpg",
+    artist: "Her's",
+    title: "Songs of Her's",
+    runtime: "34 Minutes",
+    genres: "Indie Pop, Bedroom Pop, Feel-good",
+    topTrack: "Dorothy",
+    color: "#992266"
+  }
+  ,
+  {
+    cover: "../img/albums/instantgratification.jpg",
+    artist: "Dance Gavin Dance",
+    title: "Instant Gratification",
+    runtime: "42 Minutes",
+    genres: "Post-hardcore, Alt Rock",
+    topTrack: "Stroke God, Millionaire",
+    color: "#C87A54"
+  }
+  ,
+  {
+    cover: "../img/albums/astrangertoyou.jpg",
+    artist: "Loathe",
+    title: "A Stranger To You",
+    runtime: "55 Minutes",
+    genres: "Metal, Metal-core",
+    topTrack: "Harder To Pretend",
+    color: "#3D4746"
+  }
 ];
 const container = document.getElementById("top-3-albums");
 const upload = document.getElementById("imageUpload");
