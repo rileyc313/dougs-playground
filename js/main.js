@@ -1,3 +1,5 @@
+const puppyCount = 14;
+
 const facts = [
   "Octopuses have three hearts and blue blood.",
   "Sharks have existed longer than trees.",
@@ -87,8 +89,7 @@ const albums = [
     genres: "Punk, Alternative Rock, Indie Rock",
     topTrack: "27",
     color: "#045ED8"
-  }
-  ,
+  },
   {
     cover: "../img/albums/floralgreen.jpg",
     artist: "Title Fight",
@@ -97,8 +98,7 @@ const albums = [
     genres: "Punk, Alternative Rock, Indie Rock",
     topTrack: "Make You Cry",
     color: "#0C3441"
-  }
-  ,
+  },
   {
     cover: "../img/albums/inlet.jpg",
     artist: "HUM",
@@ -107,8 +107,7 @@ const albums = [
     genres: "Rock, Progressive Rock",
     topTrack: "The Summoning",
     color: "#504D6C"
-  }
-  ,
+  },
   {
     cover: "../img/albums/betweentherichness.jpg",
     artist: "Fiddlehead",
@@ -117,8 +116,7 @@ const albums = [
     genres: "Alternative Rock, Indie Rock",
     topTrack: "Heart To Heart",
     color: "#3E8FAC"
-  }
-  ,
+  },
   {
     cover: "../img/albums/superheaven.jpg",
     artist: "Superheaven",
@@ -127,8 +125,7 @@ const albums = [
     genres: "Metal, Alternative Rock, Rock",
     topTrack: "Long Gone",
     color: "#5A251F"
-  }
-  ,
+  },
   {
     cover: "../img/albums/jar.jpg",
     artist: "Superheaven",
@@ -137,8 +134,7 @@ const albums = [
     genres: "Alternative Rock, Rock, Indie Rock",
     topTrack: "Around The Railing",
     color: "#3C7096"
-  }
-  ,
+  },
   {
     cover: "../img/albums/stovall.jpg",
     artist: "Microwave",
@@ -147,8 +143,7 @@ const albums = [
     genres: "Alternative Rock, Rock, Indie Rock",
     topTrack: "Something Right",
     color: "#b3a925"
-  }
-  ,
+  },
   {
     cover: "../img/albums/promiseeverything.jpg",
     artist: "Basement",
@@ -157,8 +152,7 @@ const albums = [
     genres: "Alternative Rock, Rock, Indie Rock",
     topTrack: "For You The Moon",
     color: "#6E9CCF"
-  }
-  ,
+  },
   {
     cover: "../img/albums/besidemyself.jpg",
     artist: "Basement",
@@ -167,8 +161,7 @@ const albums = [
     genres: "Post-grunge, Alternative Rock, Indie Rock",
     topTrack: "Nothing Left",
     color: "#042750"
-  }
-  ,
+  },
   {
     cover: "../img/albums/colourmeinkindness.jpg",
     artist: "Basement",
@@ -177,8 +170,7 @@ const albums = [
     genres: "Post-grunge, Alternative Rock, Indie Rock",
     topTrack: "Comfort",
     color: "#D57719"
-  }
-  ,
+  },
   {
     cover: "../img/albums/youth.jpg",
     artist: "Citizen",
@@ -187,8 +179,7 @@ const albums = [
     genres: "Post-grunge, Alternative Rock, Indie Rock",
     topTrack: "The Summer",
     color: "#950B0D"
-  }
-  ,
+  },
   {
     cover: "../img/albums/solongforever.jpg",
     artist: "Palace",
@@ -206,8 +197,7 @@ const albums = [
     genres: "Metal, Hard Rock, Rock",
     topTrack: "A Sad Cartoon",
     color: "#000000"
-  }
-  ,
+  },
   {
     cover: "../img/albums/werenotheretobeloved.jpeg",
     artist: "Fleshwater",
@@ -216,8 +206,7 @@ const albums = [
     genres: "Hard Rock, Indie Rock",
     topTrack: "Linda Claire",
     color: "#E09B2F"
-  }
-  ,
+  },
   {
     cover: "../img/albums/peoplewatching.jpg",
     artist: "156/Silence",
@@ -226,8 +215,7 @@ const albums = [
     genres: "Metal, Hard Rock",
     topTrack: "Target Acquired",
     color: "#84561F"
-  }
-  ,
+  },
   {
     cover: "../img/albums/thefearoffear.png",
     artist: "Spiritbox",
@@ -245,8 +233,7 @@ const albums = [
     genres: "Indie Pop, Bedroom Pop",
     topTrack: "Bass God",
     color: "#485DA9"
-  }
-  ,
+  },
   {
     cover: "../img/albums/nownotyet.jpg",
     artist: "half•alive",
@@ -255,8 +242,7 @@ const albums = [
     genres: "Indie Pop, Bedroom Pop",
     topTrack: "Arrow",
     color: "#D44F30"
-  }
-  ,
+  },
   {
     cover: "../img/albums/invitationtohers.jpg",
     artist: "Her's",
@@ -265,8 +251,7 @@ const albums = [
     genres: "Indie Pop, Bedroom Pop, Feel-good",
     topTrack: "Under Wraps",
     color: "#982A73"
-  }
-  ,
+  },
   {
     cover: "../img/albums/songsofhers.jpg",
     artist: "Her's",
@@ -275,8 +260,7 @@ const albums = [
     genres: "Indie Pop, Bedroom Pop, Feel-good",
     topTrack: "Dorothy",
     color: "#992266"
-  }
-  ,
+  },
   {
     cover: "../img/albums/instantgratification.jpg",
     artist: "Dance Gavin Dance",
@@ -285,8 +269,7 @@ const albums = [
     genres: "Post-hardcore, Alt Rock",
     topTrack: "Stroke God, Millionaire",
     color: "#C87A54"
-  }
-  ,
+  },
   {
     cover: "../img/albums/astrangertoyou.jpg",
     artist: "Loathe",
@@ -297,80 +280,122 @@ const albums = [
     color: "#3D4746"
   }
 ];
-const container = document.getElementById("top-3-albums");
-const upload = document.getElementById("imageUpload");
-const canvas = document.getElementById("pixelCanvas");
-const ctx = canvas.getContext("2d");
-const randomAlbum = [...albums]
-  .sort(() => Math.random() - 0.5)
-  .slice(0, 3);
 
-function showFact() {
-  document.getElementById("fact").textContent =
-    facts[Math.floor(Math.random() * facts.length)];
+function renderPuppyElement(container) {
+  const num = Math.floor(Math.random() * puppyCount) + 1;
+  console.log(num);
+  container.innerHTML = `
+    <div class="container-left bubble" style="border-radius: 0px;">
+      <p><strong>Puppy Picture</strong>:</p>
+      <img class="doggo-pic" src="../../img/gallery/puppy/p${num}.png"/>
+    </div>
+  `;
 }
 
-upload.addEventListener("change", (e) => {
+function shuffleGallery() {
+  const gallery = document.querySelector('.photos-preview');
+  if (!gallery) return;
+
+  const photos = Array.from(gallery.children);
+
+  for (let i = photos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [photos[i], photos[j]] = [photos[j], photos[i]];
+  }
+
+  photos.forEach(photo => gallery.appendChild(photo));
+}
+
+function showFact() {
+  const factEl = document.getElementById("fact");
+  if (!factEl) return;
+  factEl.textContent = facts[Math.floor(Math.random() * facts.length)];
+}
+
+function renderTopAlbums() {
+  const container = document.getElementById("top-3-albums");
+  if (!container) return;
+
+  const randomAlbum = [...albums]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
+
+  randomAlbum.forEach(album => {
+    container.innerHTML += `
+      <div class="album">
+        <img class="album-cover" src="${album.cover}">
+        <p>Artist: <span style="color:${album.color}">${album.artist}</span></p>
+        <p>Title: <span style="color:${album.color}">${album.title}</span></p>
+        <p>Runtime: <span style="color:${album.color}">${album.runtime}</span></p>
+        <p>Genre(s): <span style="color:${album.color}">${album.genres}</span></p>
+        <p>Top Track: <span style="color:${album.color}">${album.topTrack}</span></p>
+      </div>
+    `;
+  });
+}
+
+function setupPixelUpload() {
+  const upload = document.getElementById("imageUpload");
+  const canvas = document.getElementById("pixelCanvas");
+  if (!upload || !canvas) return;
+
+  const ctx = canvas.getContext("2d");
+
+  upload.addEventListener("change", (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
     const reader = new FileReader();
 
     reader.onload = (event) => {
-        const img = new Image();
+      const img = new Image();
 
-        img.onload = () => {
-            const pixelSize = 8;
+      img.onload = () => {
+        const pixelSize = 8;
 
-            const smallCanvas = document.createElement("canvas");
-            const smallCtx = smallCanvas.getContext("2d");
+        const smallCanvas = document.createElement("canvas");
+        const smallCtx = smallCanvas.getContext("2d");
 
-            smallCanvas.width = Math.floor(img.width / pixelSize);
-            smallCanvas.height = Math.floor(img.height / pixelSize);
+        smallCanvas.width = Math.floor(img.width / pixelSize);
+        smallCanvas.height = Math.floor(img.height / pixelSize);
 
-            smallCtx.drawImage(
-                img,
-                0,
-                0,
-                smallCanvas.width,
-                smallCanvas.height
-            );
+        smallCtx.drawImage(
+          img,
+          0,
+          0,
+          smallCanvas.width,
+          smallCanvas.height
+        );
 
-            canvas.width = img.width;
-            canvas.height = img.height;
+        canvas.width = img.width;
+        canvas.height = img.height;
 
-            ctx.imageSmoothingEnabled = false;
-            ctx.drawImage(
-                smallCanvas,
-                0,
-                0,
-                smallCanvas.width,
-                smallCanvas.height,
-                0,
-                0,
-                canvas.width,
-                canvas.height
-            );
-        };
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(
+          smallCanvas,
+          0,
+          0,
+          smallCanvas.width,
+          smallCanvas.height,
+          0,
+          0,
+          canvas.width,
+          canvas.height
+        );
+      };
 
-        img.src = event.target.result;
+      img.src = event.target.result;
     };
 
     reader.readAsDataURL(file);
-});
+  });
+}
 
-randomAlbum.forEach(album => {
-  container.innerHTML += `
-    <div class="album">
-      <img class="album-cover" src="${album.cover}">
-      <p>Artist: <span style="color:${album.color}">${album.artist}</span></p>
-      <p>Title: <span style="color:${album.color}">${album.title}</span></p>
-      <p>Runtime: <span style="color:${album.color}">${album.runtime}</span></p>
-      <p>Genre(s): <span style="color:${album.color}">${album.genres}</span></p>
-      <p>Top Track: <span style="color:${album.color}">${album.topTrack}</span></p>
-    </div>
-  `;
-});
+const puppySlot = document.getElementById('puppy-slot');
+if (puppySlot) renderPuppyElement(puppySlot);
 
+shuffleGallery();
+renderTopAlbums();
+setupPixelUpload();
 showFact();
 setInterval(showFact, 10000);
