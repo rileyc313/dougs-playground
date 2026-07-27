@@ -82,6 +82,9 @@ ol {
     height: 100%;
     z-index: -10;
     background-color: #272626;
+    background-image: url('../img/bg2\(1\).jpg');
+    background-repeat: repeat;
+    /* background-size: 64px 64px; */
 }
 
 @font-face {
@@ -102,7 +105,7 @@ ol {
 
 .bubble {
     z-index: 1;
-    background: #C0C0C0;
+    background: #a39c92;
     padding: 20px;
 
     border-top: 2px solid #FFFFFF;
@@ -119,7 +122,7 @@ ol {
     display: flex;
     justify-content: center;
     z-index: 1;
-    background: #C0C0C0;
+    background:#a39c92;
     padding-bottom: 20px;
     width: 100%;
 }
@@ -225,7 +228,18 @@ ol {
 
 .mobile-icons {
     display: flex;
-    gap:10px;
+    gap: 10px;
+    justify-content: right;
+}
+
+.mobile-icons > .bubble {
+    flex: 1 1 calc(50% - 5px);
+    max-width: calc(50% - 5px);
+}
+
+.mobile-icons > .bubble:only-child {
+    flex: 0 1 auto;
+    max-width: 28%;
 }
 
 .tricorn {
@@ -376,10 +390,11 @@ ol {
         box-sizing: border-box;
     }
 
-    .live-chat,
-    .gallery {
-        width: calc(50% - 5px);
-        max-width: none;
+    .live-chat img,
+    .gallery img {
+        width: 100%;
+        height: auto;
+        margin: 0;
     }
 
     .live-chat img,
@@ -561,11 +576,6 @@ body::after {
     animation: crt-flicker 0.15s infinite;
 }
 
-@keyframes crt-flicker {
-    0%   { opacity: 0.96; }
-    50%  { opacity: 1; }
-    100% { opacity: 0.97; }
-}
 
 .main-body {
     animation: textShadow 2s infinite;
@@ -600,7 +610,7 @@ body {
 .banner-container {
   overflow: hidden; 
   width: 100%;
-background: #C0C0C0;
+    background: #a39c92;
     padding: 20px;
 
     border-top: 2px solid #FFFFFF;
