@@ -23,7 +23,8 @@
         a, 
         label, 
         button,
-        label.upload-btn {
+        label.upload-btn,
+        .mercury-header-gif {
             cursor: url('./misc/carmageddon/2.cur'), auto;
         }
 
@@ -37,7 +38,7 @@
 
 </head>
 
-<body class="">
+<body>
     <img class="backdrop">
     <div class="splash-image-container">
         <a href="../../index2.html"><img class="splash-image" src="../../img/dougsplaygroundsplash.gif"></a>
@@ -87,7 +88,11 @@
         </div>
         <div class="container-main flex-column">
             <div class="header bubble">
-                <img class="mercury-header-gif" src="../img/mercury.gif">
+                <audio id="mercurySound" src="./audio/bark-fart-sound.mp3" preload="auto"></audio>
+                <audio id="pianoSound1" src="./audio/notec_yhGsG75.mp3" preload="auto"></audio>
+                <audio id="pianoSound2" src="./audio/39191__jobro__piano-ff-044.mp3" preload="auto"></audio>
+                <audio id="pianoSound3" src="./audio/39189__jobro__piano-ff-042.mp3" preload="auto"></audio>
+                <img class="mercury-header-gif" id="mercuryGif" src="../img/mercury.gif">
                 <h1 class="header-title">Random <span class="red-strike-through">Fact</span> <span
                         class="header-title-post-strike-through">Fact</span> Generator</h1>
                 <div class="random-facts">
@@ -116,9 +121,56 @@
                         larger size! Smaller images will likely be ineligible :(</p>
                 </div>
             </div>
+            <!-- <div class="duke-section" style="display: flex; flex-direction: row; align-items: center;">
+                <div style="width: 110px; height: 100px; overflow: hidden; position: relative;">
+                <iframe 
+                    src="https://www.myinstants.com/instant/kissing-sound/embed/" 
+                    width="110" 
+                    height="300" 
+                    style="position: absolute; top: -px; left: 0; border: none;"
+                    scrolling="no">
+                </iframe>
+                </div>
+                <div style="width: 110px; height: 100px; overflow: hidden; position: relative;">
+                <iframe 
+                    src="https://www.myinstants.com/instant/fart/embed/" 
+                    width="110" 
+                    height="300" 
+                    style="position: absolute; top: -px; left: 0; border: none;"
+                    scrolling="no">
+                </iframe>
+                </div>
+                <div style="width: 110px; height: 100px; overflow: hidden; position: relative;">
+                <iframe 
+                    src="https://www.myinstants.com/instant/bruh/embed/" 
+                    width="110" 
+                    height="300" 
+                    style="position: absolute; top: -px; left: 0; border: none;"
+                    scrolling="no">
+                </iframe>
+                </div>
+                <div style="width: 110px; height: 100px; overflow: hidden; position: relative;">
+                <iframe 
+                    src="https://www.myinstants.com/instant/mac-quack-83896/embed/" 
+                    width="110" 
+                    height="300" 
+                    style="position: absolute; top: -px; left: 0; border: none;"
+                    scrolling="no">
+                </iframe>
+                </div>
+                <div style="width: 110px; height: 100px; overflow: hidden; position: relative;">
+                <iframe 
+                    src="https://www.myinstants.com/instant/bark-fart-sound-82395/embed/" 
+                    width="110" 
+                    height="300" 
+                    style="position: absolute; top: -px; left: 0; border: none;"
+                    scrolling="no">
+                </iframe>
+                </div>
+            </div> -->
         </div>
         <div class="container-right bubble">
-            <img class="musical-notes" src="../img/musical-notes.gif">
+            <img id="musicalNotesGif" class="musical-notes" src="../img/musical-notes.gif">
             <p>On REPEAT!</p>
             <div id="top-3-albums"></div>
         </div>

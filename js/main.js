@@ -394,6 +394,25 @@ function setupPixelUpload() {
 const puppySlot = document.getElementById('puppy-slot');
 if (puppySlot) renderPuppyElement(puppySlot);
 
+document.getElementById('mercuryGif').addEventListener('click', function() {
+    const sound = document.getElementById('mercurySound');
+    sound.currentTime = 0;
+    sound.play();
+});
+
+document.getElementById('musicalNotesGif').addEventListener('click', function() {
+    const sounds = ['pianoSound1', 'pianoSound2', 'pianoSound3'];
+    const randomId = sounds[Math.floor(Math.random() * sounds.length)];
+    const sound = document.getElementById(randomId);
+
+    sound.currentTime = 0;
+    sound.play();
+});
+
+document.querySelectorAll('audio').forEach(function(audio) {
+    audio.volume = 0.2;
+});
+
 shuffleGallery();
 renderTopAlbums();
 setupPixelUpload();
