@@ -594,23 +594,6 @@ body {
     background: black;
 }
 
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9998;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            transparent 0%,
-            transparent 100%,
-            rgba(0,0,0,0.15) 100%
-        );
-}
-
-
 .main-body {
     animation: textShadow 2s infinite;
 }
