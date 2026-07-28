@@ -1,6 +1,18 @@
 /* Main / Misc. CSS */
 body {
     margin: 0px;
+    cursor: url('../misc/carmageddon/1.cur'), auto;
+}
+
+a, 
+label, 
+button,
+label.upload-btn {
+    cursor: url('../misc/carmageddon/2.cur'), auto;
+}
+
+iframe{
+    cursor: url('../misc/carmageddon/1.cur'), auto;
 }
 
 p,
