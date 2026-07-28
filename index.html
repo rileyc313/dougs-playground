@@ -51,6 +51,40 @@
         .no-overflow {
             overflow: hidden;
         }
+
+        .loading-box {
+            display: none;
+        }
+
+        .loading-box.active {
+            display: block;
+        }
+
+        .loading-image {
+            display: block;
+            max-width: 250px;
+            height: auto;
+            margin: 0 auto 15px auto;
+        }
+
+        .loading-bar {
+            width: 250px;
+            height: 20px;
+            background: #FFFFFF;
+            border: 2px inset #808080;
+            overflow: hidden;
+        }
+
+        .loading-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: #a50d02;
+            animation: fillBar 2.5s ease-in-out forwards;
+        }
+
+        @keyframes fillBar {
+            to { width: 100%; }
+        }
     </style>
 
     <!-- JS -->
@@ -59,9 +93,31 @@
 
 <body class="no-overflow">
     <div class="entry-container">
-        <img class="splash-image" src="./img/axkpgi-ezgif.com-crop.gif">
-        <a href="../../index2.html" style="text-decoration: none; color: inherit;"><p class="come-play">Come play.</p></a>
-    </diV>
+        <img class="splash-image" id="splashImage" src="./img/axkpgi-ezgif.com-crop.gif">
+        <a href="../../index2.html" id="playLink" style="text-decoration: none; color: inherit;"><p class="come-play">Come play.</p></a>
+
+        <div class="loading-box" id="loadingBox">
+            <img class="loading-image" src="./img/albums/WelcomeMessage-3407311949.png" alt="Welcome">
+            <div class="loading-bar">
+                <div class="loading-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('playLink').addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+
+            document.getElementById('splashImage').style.display = 'none';
+            this.style.display = 'none';
+            document.getElementById('loadingBox').classList.add('active');
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 2500);
+        });
+    </script>
 </body>
 
 </html>

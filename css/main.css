@@ -91,7 +91,6 @@ ol {
 
 .container-left {
     position: relative;
-    
     width: 225px;
     z-index: 1;
     border-radius: 5px;
@@ -118,7 +117,6 @@ ol {
     background-color: #272626;
     background-image: url('../img/bg2\(1\).jpg');
     background-repeat: repeat;
-    /* background-size: 64px 64px; */
 }
 
 @font-face {
@@ -594,22 +592,6 @@ body {
     position: relative;
     overflow-x: hidden;
     background: black;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9999;
-
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.03) 0px,
-        rgba(255,255,255,0.03) 1px,
-        transparent 2px,
-        transparent 4px
-    );
 }
 
 body::after {
