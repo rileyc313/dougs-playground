@@ -53,6 +53,11 @@ const facts = [
   "The world's quietest room is so silent that people can hear their own heartbeat."
 ];
 
+// Each album can carry its own playable "tracks" list.
+// Format matches player.js's track_list schema:
+//   { name: "Song Name", artist: "Artist Name", path: "https://link.to/file.mp3" }
+// Leave the array empty ([]) if you haven't got songs for that album yet —
+// the mini player just won't render for that card until you do.
 const albums = [
   {
     cover: "../img/albums/whatliesaheadofme.jpg",
@@ -61,7 +66,12 @@ const albums = [
     runtime: "32 Minutes",
     genres: "Alternative rock, indie rock, shoegaze",
     topTrack: "Receiving Certain Answers",
-    color: "#e46c82"
+    color: "#e46c82",
+    tracks: [{
+          name: "All Under Heaven",
+          artist:"Receiving Certain Answers",
+          path:"../audio/toptracks/All Under Heaven - Receiving Certain Answers.mp3"
+      },]
   },
   {
     cover: "../img/albums/muchlove.jpg",
@@ -70,7 +80,12 @@ const albums = [
     runtime: "38 Minutes",
     genres: "Alternative rock, indie rock",
     topTrack: "Whimper",
-    color: "#EE6C4A"
+    color: "#EE6C4A",
+    tracks: [{
+          name: "Microwave",
+          artist:"Whimper",
+          path:"../audio/toptracks/Microwave - Whimper.mp3"
+      },]
   },
   {
     cover: "../img/albums/youdpreferanastronaut.jpg",
@@ -79,7 +94,12 @@ const albums = [
     runtime: "46 Minutes",
     genres: "Punk",
     topTrack: "The Pod",
-    color: "#3bb349"
+    color: "#3bb349",
+    tracks: [{
+          name: "HUM",
+          artist:"The Pod",
+          path:"../audio/toptracks/HUM - The Pod.mp3"
+      },]
   },
   {
     cover: "../img/albums/shed.jpg",
@@ -88,7 +108,12 @@ const albums = [
     runtime: "27 Minutes",
     genres: "Punk, Alternative Rock, Indie Rock",
     topTrack: "27",
-    color: "#045ED8"
+    color: "#045ED8",
+    tracks: [{
+          name: "Title Fight",
+          artist:"27",
+          path:"../audio/toptracks/Title Fight - 27.mp3"
+      },]
   },
   {
     cover: "../img/albums/floralgreen.jpg",
@@ -97,7 +122,12 @@ const albums = [
     runtime: "32 Minutes",
     genres: "Punk, Alternative Rock, Indie Rock",
     topTrack: "Make You Cry",
-    color: "#0C3441"
+    color: "#0C3441",
+    tracks: [{
+          name: "Title Fight",
+          artist:"Make You Cry",
+          path:"../audio/toptracks/Title Fight - Make You Cry.mp3"
+      },]
   },
   {
     cover: "../img/albums/inlet.jpg",
@@ -106,7 +136,12 @@ const albums = [
     runtime: "55 Minutes",
     genres: "Rock, Progressive Rock",
     topTrack: "The Summoning",
-    color: "#504D6C"
+    color: "#504D6C",
+    tracks: [{
+          name: "HUM",
+          artist:"The Summoning",
+          path:"../audio/toptracks/HUM - The Summoning.mp3"
+      },]
   },
   {
     cover: "../img/albums/betweentherichness.jpg",
@@ -115,7 +150,12 @@ const albums = [
     runtime: "25 Minutes",
     genres: "Alternative Rock, Indie Rock",
     topTrack: "Heart To Heart",
-    color: "#3E8FAC"
+    color: "#3E8FAC",
+    tracks: [{
+          name: "Fiddlehead",
+          artist:"Heart To Heart",
+          path:"../audio/toptracks/Fiddlehead - Heart To Heart.mp3"
+      },]
   },
   {
     cover: "../img/albums/superheaven.jpg",
@@ -124,7 +164,12 @@ const albums = [
     runtime: "31 Minutes",
     genres: "Metal, Alternative Rock, Rock",
     topTrack: "Long Gone",
-    color: "#5A251F"
+    color: "#5A251F",
+    tracks: [{
+          name: "Superheaven",
+          artist:"Long Gone",
+          path:"../audio/toptracks/Superheaven - Long Gone.mp3"
+      },]
   },
   {
     cover: "../img/albums/jar.jpg",
@@ -133,7 +178,12 @@ const albums = [
     runtime: "41 Minutes",
     genres: "Alternative Rock, Rock, Indie Rock",
     topTrack: "Around The Railing",
-    color: "#3C7096"
+    color: "#3C7096",
+    tracks: [{
+          name: "Superheaven",
+          artist:"Around The Railing",
+          path:"../audio/toptracks/Superheaven - Around The Railing.mp3"
+      },]
   },
   {
     cover: "../img/albums/stovall.jpg",
@@ -142,7 +192,12 @@ const albums = [
     runtime: "38 Minutes",
     genres: "Alternative Rock, Rock, Indie Rock",
     topTrack: "Something Right",
-    color: "#b3a925"
+    color: "#b3a925",
+    tracks: [{
+          name: "Microwave",
+          artist:"Something Right",
+          path:"../audio/toptracks/Microwave - Something Right.mp3"
+      },]
   },
   {
     cover: "../img/albums/promiseeverything.jpg",
@@ -151,7 +206,12 @@ const albums = [
     runtime: "28 Minutes",
     genres: "Alternative Rock, Rock, Indie Rock",
     topTrack: "For You The Moon",
-    color: "#6E9CCF"
+    color: "#6E9CCF",
+    tracks: [{
+          name: "Basement",
+          artist:"For You The Moon",
+          path:"../audio/toptracks/Basement - For You The Moon.mp3"
+      },]
   },
   {
     cover: "../img/albums/besidemyself.jpg",
@@ -160,7 +220,12 @@ const albums = [
     runtime: "38 Minutes",
     genres: "Post-grunge, Alternative Rock, Indie Rock",
     topTrack: "Nothing Left",
-    color: "#042750"
+    color: "#042750",
+    tracks: [{
+          name: "Basement",
+          artist:"Nothing Left",
+          path:"../audio/toptracks/Basement - Nothing Left.mp3"
+      },]
   },
   {
     cover: "../img/albums/colourmeinkindness.jpg",
@@ -169,7 +234,12 @@ const albums = [
     runtime: "33 Minutes",
     genres: "Post-grunge, Alternative Rock, Indie Rock",
     topTrack: "Comfort",
-    color: "#D57719"
+    color: "#D57719",
+    tracks: [{
+          name: "Basement",
+          artist:"Comfort",
+          path:"../audio/toptracks/Basement - Comfort.mp3"
+      },]
   },
   {
     cover: "../img/albums/youth.jpg",
@@ -178,7 +248,12 @@ const albums = [
     runtime: "30 Minutes",
     genres: "Post-grunge, Alternative Rock, Indie Rock",
     topTrack: "The Summer",
-    color: "#950B0D"
+    color: "#950B0D",
+    tracks: [{
+          name: "Citizen",
+          artist:"The Summer",
+          path:"../audio/toptracks/Citizen - The Summer.mp3"
+      },]
   },
   {
     cover: "../img/albums/solongforever.jpg",
@@ -187,7 +262,12 @@ const albums = [
     runtime: "42 Minutes",
     genres: "Indie Rock, Feel-good",
     topTrack: "It's Over",
-    color: "#259164"
+    color: "#259164",
+    tracks: [{
+          name: "Palace",
+          artist:"It's Over",
+          path:"../audio/toptracks/Palace - It's Over.mp3"
+      },]
   },
   {
     cover: "../img/albums/iletitinandittookeverything.jpg",
@@ -196,7 +276,12 @@ const albums = [
     runtime: "49 Minutes",
     genres: "Metal, Hard Rock, Rock",
     topTrack: "A Sad Cartoon",
-    color: "#000000"
+    color: "#000000",
+    tracks: [{
+          name: "Loathe",
+          artist:"A Sad Cartoon",
+          path:"../audio/toptracks/Loathe - A Sad Cartoon.mp3"
+      },]
   },
   {
     cover: "../img/albums/werenotheretobeloved.jpeg",
@@ -205,7 +290,12 @@ const albums = [
     runtime: "27 Minutes",
     genres: "Hard Rock, Indie Rock",
     topTrack: "Linda Claire",
-    color: "#E09B2F"
+    color: "#E09B2F",
+    tracks: [{
+          name: "Fleshwater",
+          artist:"Linda Claire",
+          path:"../audio/toptracks/Fleshwater - Linda Claire.mp3"
+      },]
   },
   {
     cover: "../img/albums/peoplewatching.jpg",
@@ -214,7 +304,12 @@ const albums = [
     runtime: "46 Minutes",
     genres: "Metal, Hard Rock",
     topTrack: "Target Acquired",
-    color: "#84561F"
+    color: "#84561F",
+    tracks: [{
+          name: "156/Silence",
+          artist:"Target Acquired",
+          path:"../audio/toptracks/156Silence - Target Acquired.mp3"
+      },]
   },
   {
     cover: "../img/albums/thefearoffear.png",
@@ -223,7 +318,12 @@ const albums = [
     runtime: "25 Minutes",
     genres: "Metal, Hard Rock",
     topTrack: "Too Close/Too Late",
-    color: "#402A47"
+    color: "#402A47",
+    tracks: [{
+          name: "Spiritbox",
+          artist:"Too Close/Too Late",
+          path:"../audio/toptracks/Spiritbox - Too Close Too Late.mp3"
+      },]
   },
   {
     cover: "../img/albums/yunemogarden.jpg",
@@ -232,7 +332,12 @@ const albums = [
     runtime: "37 Minutes",
     genres: "Indie Pop, Bedroom Pop",
     topTrack: "Bass God",
-    color: "#485DA9"
+    color: "#485DA9",
+    tracks: [{
+          name: "Last Dinosaurs",
+          artist:"Bass God",
+          path:"../audio/toptracks/Last Dinosaurs - Bass God.mp3"
+      },]
   },
   {
     cover: "../img/albums/nownotyet.jpg",
@@ -241,7 +346,12 @@ const albums = [
     runtime: "41 Minutes",
     genres: "Indie Pop, Bedroom Pop",
     topTrack: "Arrow",
-    color: "#D44F30"
+    color: "#D44F30",
+    tracks: [{
+          name: "half•alive",
+          artist:"Arrow",
+          path:"../audio/toptracks/halfalive - Arrow.mp3"
+      },]
   },
   {
     cover: "../img/albums/invitationtohers.jpg",
@@ -250,7 +360,12 @@ const albums = [
     runtime: "45 Minutes",
     genres: "Indie Pop, Bedroom Pop, Feel-good",
     topTrack: "Under Wraps",
-    color: "#982A73"
+    color: "#982A73",
+    tracks: [{
+          name: "Her's",
+          artist:"Under Wraps",
+          path:"../audio/toptracks/Her's - Under Wraps.mp3"
+      },]
   },
   {
     cover: "../img/albums/songsofhers.jpg",
@@ -259,7 +374,12 @@ const albums = [
     runtime: "34 Minutes",
     genres: "Indie Pop, Bedroom Pop, Feel-good",
     topTrack: "Dorothy",
-    color: "#992266"
+    color: "#992266",
+    tracks: [{
+          name: "Her's",
+          artist:"Dorothy",
+          path:"../audio/toptracks/Her's - Dorothy.mp3"
+      },]
   },
   {
     cover: "../img/albums/instantgratification.jpg",
@@ -268,7 +388,12 @@ const albums = [
     runtime: "42 Minutes",
     genres: "Post-hardcore, Alt Rock",
     topTrack: "Stroke God, Millionaire",
-    color: "#C87A54"
+    color: "#C87A54",
+    tracks: [{
+          name: "Dance Gavin Dance",
+          artist:"Stroke God, Millionaire",
+          path:"../audio/toptracks/Dance Gavin Dance - Stroke God, Millionaire.mp3"
+      },]
   },
   {
     cover: "../img/albums/astrangertoyou.jpg",
@@ -277,7 +402,12 @@ const albums = [
     runtime: "55 Minutes",
     genres: "Metal, Metal-core",
     topTrack: "Harder To Pretend",
-    color: "#3D4746"
+    color: "#3D4746",
+    tracks: [{
+          name: "Loathe",
+          artist:"Harder To Pretend",
+          path:"../audio/toptracks/Loathe -  Harder to Pretend.mp3"
+      },]
   }
 ];
 
@@ -390,25 +520,179 @@ function showFact() {
   factEl.textContent = facts[Math.floor(Math.random() * facts.length)];
 }
 
+// ---- Mini music player (per album card) ----
+// Scoped per-instance so multiple players can exist on the page
+// at once without stepping on each other's state, and without
+// colliding with the global player wired up in player.js.
+
+function trackPlayerHTML() {
+  return `
+    <div class="player-flex album-player" style="padding-bottom: 10px;">
+      <div class="player-main">
+        <select disabled class="track-select"></select>
+        <div class="controls">
+          <div class="seeking">
+            <div class="current-time">0:00</div>
+            <input type="range" min="1" max="100" value="0" class="seek_slider">
+            <div class="total-duration">0:00</div>
+          </div>
+          <div class="player-buttons">
+            <button class="window-button playpause-track" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003
+              3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio></audio>
+  `;
+}
+
+function createTrackPlayer(container, tracks) {
+  if (!container || !tracks || !tracks.length) return;
+
+  const trackSelect = container.querySelector(".track-select");
+  const playpauseBtn = container.querySelector(".playpause-track");
+  const seekSlider = container.querySelector(".seek_slider");
+  const currTimeEl = container.querySelector(".current-time");
+  const totalDurationEl = container.querySelector(".total-duration");
+  const audio = container.querySelector("audio");
+
+  if (!trackSelect || !playpauseBtn || !seekSlider || !currTimeEl || !totalDurationEl || !audio) return;
+
+  audio.volume = 0.2;
+
+  let trackIndex = 0;
+  let isPlaying = false;
+  let updateTimer;
+
+  function populateDropdown() {
+    trackSelect.innerHTML = "";
+    tracks.forEach((track, index) => {
+      const option = document.createElement("option");
+      option.value = index;
+      option.textContent = `${track.name} — ${track.artist}`;
+      trackSelect.appendChild(option);
+    });
+    trackSelect.value = trackIndex;
+  }
+
+  function resetValues() {
+    currTimeEl.textContent = "0:00";
+    totalDurationEl.textContent = "0:00";
+    seekSlider.value = 0;
+  }
+
+  function loadTrack(index) {
+    clearInterval(updateTimer);
+    resetValues();
+
+    audio.src = tracks[index].path;
+    audio.load();
+
+    updateTimer = setInterval(seekUpdate, 1000);
+    trackSelect.value = index;
+  }
+
+  function playTrack() {
+    audio.play();
+    isPlaying = true;
+    playpauseBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+      viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round"
+      class="lucide lucide-pause-icon"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>`;
+  }
+
+  function pauseTrack() {
+    audio.pause();
+    isPlaying = false;
+    playpauseBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+      viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round"
+      class="lucide lucide-play-icon"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003
+      3.458l-12 7A2 2 0 0 1 5 19z"/></svg>`;
+  }
+
+  function playpauseTrack() {
+    if (!isPlaying) playTrack();
+    else pauseTrack();
+  }
+
+  function nextTrack() {
+    trackIndex = (trackIndex < tracks.length - 1) ? trackIndex + 1 : 0;
+    loadTrack(trackIndex);
+    playTrack();
+  }
+
+  function seekTo() {
+    if (isNaN(audio.duration)) return;
+    const seekto = audio.duration * (seekSlider.value / 100);
+    audio.currentTime = seekto;
+  }
+
+  function seekUpdate() {
+    let seekPosition = 0;
+    if (!isNaN(audio.duration)) {
+      seekPosition = audio.currentTime * (100 / audio.duration);
+      seekSlider.value = seekPosition;
+
+      let currentMinutes = Math.floor(audio.currentTime / 60);
+      let currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
+      let durationMinutes = Math.floor(audio.duration / 60);
+      let durationSeconds = Math.floor(audio.duration - durationMinutes * 60);
+
+      if (currentSeconds < 10) currentSeconds = "0" + currentSeconds;
+      if (durationSeconds < 10) durationSeconds = "0" + durationSeconds;
+
+      currTimeEl.textContent = currentMinutes + ":" + currentSeconds;
+      totalDurationEl.textContent = durationMinutes + ":" + durationSeconds;
+    }
+  }
+
+  trackSelect.addEventListener("change", function() {
+    trackIndex = parseInt(this.value, 10);
+    loadTrack(trackIndex);
+    playTrack();
+  });
+
+  playpauseBtn.addEventListener("click", playpauseTrack);
+  seekSlider.addEventListener("change", seekTo);
+  audio.addEventListener("ended", nextTrack);
+
+  populateDropdown();
+  loadTrack(trackIndex);
+}
+
 function renderTopAlbums() {
   const container = document.getElementById("top-3-albums");
   if (!container) return;
 
-  const randomAlbum = [...albums]
+  container.innerHTML = "";
+
+  const randomAlbums = [...albums]
     .sort(() => Math.random() - 0.5)
     .slice(0, 3);
 
-  randomAlbum.forEach(album => {
-    container.innerHTML += `
-      <div class="album">
-        <img class="album-cover" src="${album.cover}">
-        <p>Artist: <span style="color:${album.color}">${album.artist}</span></p>
-        <p>Title: <span style="color:${album.color}">${album.title}</span></p>
-        <p>Runtime: <span style="color:${album.color}">${album.runtime}</span></p>
-        <p>Genre(s): <span style="color:${album.color}">${album.genres}</span></p>
-        <p>Top Track: <span style="color:${album.color}">${album.topTrack}</span></p>
-      </div>
+  randomAlbums.forEach(album => {
+    const albumEl = document.createElement("div");
+    albumEl.className = "album";
+    albumEl.innerHTML = `
+      <img class="album-cover" src="${album.cover}">
+      <p>Artist: <span style="color:${album.color}">${album.artist}</span></p>
+      <p>Title: <span style="color:${album.color}">${album.title}</span></p>
+      <p>Runtime: <span style="color:${album.color}">${album.runtime}</span></p>
+      <p>Genre(s): <span style="color:${album.color}">${album.genres}</span></p>
+      <p>Top Track: <span style="color:${album.color}">${album.topTrack}</span></p>
+      ${album.tracks && album.tracks.length ? trackPlayerHTML() : ""}
     `;
+    container.appendChild(albumEl);
+
+    if (album.tracks && album.tracks.length) {
+      createTrackPlayer(albumEl, album.tracks);
+    }
   });
 }
 
