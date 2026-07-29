@@ -2,7 +2,6 @@
         --bubble-background: #a39c92;
 }
 
-/* Main / Misc. CSS */
 body {
     margin: 0px;
     cursor: url('../misc/carmageddon/1.cur'), auto;
@@ -139,6 +138,12 @@ ol {
     }
 }
 
+.invisible-bubble {
+    z-index: 1;
+    padding: 20px;
+    display: hidden;
+}
+
 .bubble {
     z-index: 1;
     background: var(--bubble-background);
@@ -163,8 +168,6 @@ ol {
     padding-bottom: 20px;
     width: 100%;
 }
-
-/* Header CSS */
 
 .splash-image-container {
     width: 100%;
@@ -213,7 +216,6 @@ ol {
     font-size: 10px;
 }
 
-/* On REPEAT! */
 .musical-notes {
     position: absolute;
     top: -40px;
@@ -236,7 +238,6 @@ ol {
     font-size: 8px;;
 }
 
-/* Left-hand side */
 
 .buttons {
     display: grid;
@@ -280,6 +281,14 @@ ol {
     flex: 1;
 }
 
+.mobile-icons .invisible-bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    flex: 1;
+}
+
 .mobile-icons .message-alert {
     width: 100%;
     height: 100%;
@@ -300,7 +309,6 @@ ol {
     margin-right: 7px;
 }
 
-/* Blogs */
 
  .blog-preview-text {
     font-size: 8px;
@@ -320,7 +328,6 @@ ol {
     break-inside: avoid;
 }
 
-/* Duke Section */
 
 .duke-section {
     display: flex;
@@ -393,7 +400,6 @@ ol {
     border: 1px solid #000;
 }
 
-/* Footer */
 
 .footer-container {
     width: 100%;
@@ -408,7 +414,6 @@ ol {
     flex-direction: row;
 }
 
-/* Mobile */
 @media (max-width: 900px) {
 
     body {
@@ -551,13 +556,11 @@ ol {
         top: 0;
     }
 
-    /* Gallery */
 
     .photos-preview {
         column-count: 1;
     }
 
-    /* Splash image */
 
     .splash-image {
         width: 95%;
@@ -565,7 +568,6 @@ ol {
         height: auto;
     }
 
-    /* Music section */
 
     .musical-notes {
         display: none;
@@ -575,7 +577,6 @@ ol {
         max-width: 300px;
     }
 
-    /* Text */
 
     p {
         font-size: 8px;
@@ -585,7 +586,6 @@ ol {
         font-size: 7px;
     }
 
-    /* Footer */
 
     .footer-container {
         margin-top: 50px;
@@ -627,12 +627,9 @@ body {
  :root {
         --titlebar-gradient: linear-gradient(90deg, #6a1535, #b23965, #f9a5b9);
         --dialog-blue: #6a1535;
-        --dialog-accent: white; /* color of text on diaglog blue */
-        --titlebar-color: white; /* reccomended to change so its easy to read on titlebar color */
+        --dialog-accent: white;
+        --titlebar-color: white;
         --player-image: url(https://loveberry.nekoweb.org/assets/images/mp/yuzuha.png);
-
-    /*** 98 css styling ***/
-    /* while some of these may specify a single element, theyre used across mulitple */
         --surface: #c0c0c0;
         --button-highlight: #ffffff;
         --button-face: #dfdfdf;
@@ -735,7 +732,6 @@ body {
   display: display;
 }
 
-/* BELOW IS LARGELY RIPPED FROM 98 CSS */
 .track-select {
   appearance: none;
   -webkit-appearance: none;
@@ -778,7 +774,6 @@ body {
   background-image: url("https://loveberry.nekoweb.org/assets/musicplayer/button-down-active.svg");
 }
 
-/* input */
 #musicplayer input[type="range"] {  
   appearance: none;
   -webkit-appearance: none;
@@ -927,10 +922,9 @@ body {
 .banner-track {
   display: flex;
   width: max-content;
-  animation: pan 20s linear infinite; /* Loops endlessly at a fixed speed */
+  animation: pan 20s linear infinite;
 }
 
-/* Optional: Pauses the panning banner on mouse hover */
 .banner-track:hover {
   animation-play-state: paused;
 }
@@ -950,7 +944,6 @@ body {
   white-space: nowrap;
 }
 
-/* Keyframes shifting the track exactly by half its full width */
 @keyframes pan {
   0% {
     transform: translateX(0%);

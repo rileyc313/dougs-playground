@@ -1,5 +1,12 @@
 const puppyCount = 14;
 
+const ROOT =
+  typeof window !== "undefined" && window.SITE_ROOT ? window.SITE_ROOT : "../";
+
+const allTrackPlayers = [];
+
+let currentLetterFilter = null;
+
 const facts = [
   "Octopuses have three hearts and blue blood.",
   "Sharks have existed longer than trees.",
@@ -50,415 +57,467 @@ const facts = [
   "Koalas sleep up to 22 hours per day.",
   "The average person walks the equivalent of five times around the Earth in their lifetime.",
   "A single strand of spaghetti is called a spaghetto.",
-  "The world's quietest room is so silent that people can hear their own heartbeat."
+  "The world's quietest room is so silent that people can hear their own heartbeat.",
 ];
 
 // Each album can carry its own playable "tracks" list.
 // Format matches player.js's track_list schema:
-//   { name: "Song Name", artist: "Artist Name", path: "https://link.to/file.mp3" }
+//   { name: ..., artist: ..., path: ... }
 // Leave the array empty ([]) if you haven't got songs for that album yet —
 // the mini player just won't render for that card until you do.
+//
+// NOTE: cover/track paths are ROOT-RELATIVE (no leading "../") — the ROOT
+// constant above gets prepended at render time so these resolve correctly
+// regardless of how deep the current page sits.
 const albums = [
   {
-    cover: "../img/albums/whatliesaheadofme.jpg",
+    cover: "img/albums/whatliesaheadofme.jpg",
     artist: "All Under Heaven",
     title: "What Lies Ahead of Me",
     runtime: "32 Minutes",
     genres: "Alternative rock, indie rock, shoegaze",
     topTrack: "Receiving Certain Answers",
-    color: "#e46c82",
-    tracks: [{
-          name: "All Under Heaven",
-          artist:"Receiving Certain Answers",
-          path:"../audio/toptracks/All Under Heaven - Receiving Certain Answers.mp3"
-      },]
+    color: "#7D3B47",
+    tracks: [
+      {
+        name: "All Under Heaven",
+        artist: "Receiving Certain Answers",
+        path: "audio/toptracks/All Under Heaven - Receiving Certain Answers.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/muchlove.jpg",
+    cover: "img/albums/muchlove.jpg",
     artist: "Microwave",
     title: "Much Love",
     runtime: "38 Minutes",
     genres: "Alternative rock, indie rock",
     topTrack: "Whimper",
-    color: "#EE6C4A",
-    tracks: [{
-          name: "Microwave",
-          artist:"Whimper",
-          path:"../audio/toptracks/Microwave - Whimper.mp3"
-      },]
+    color: "#833B29",
+    tracks: [
+      {
+        name: "Microwave",
+        artist: "Whimper",
+        path: "audio/toptracks/Microwave - Whimper.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/youdpreferanastronaut.jpg",
+    cover: "img/albums/youdpreferanastronaut.jpg",
     artist: "HUM",
     title: "You'd Prefer an Astronaut",
     runtime: "46 Minutes",
     genres: "Punk",
     topTrack: "The Pod",
-    color: "#3bb349",
-    tracks: [{
-          name: "HUM",
-          artist:"The Pod",
-          path:"../audio/toptracks/HUM - The Pod.mp3"
-      },]
+    color: "#236B2C",
+    tracks: [
+      {
+        name: "HUM",
+        artist: "The Pod",
+        path: "audio/toptracks/HUM - The Pod.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/shed.jpg",
+    cover: "img/albums/shed.jpg",
     artist: "Title Fight",
     title: "Shed",
     runtime: "27 Minutes",
     genres: "Punk, Alternative Rock, Indie Rock",
     topTrack: "27",
     color: "#045ED8",
-    tracks: [{
-          name: "Title Fight",
-          artist:"27",
-          path:"../audio/toptracks/Title Fight - 27.mp3"
-      },]
+    tracks: [
+      {
+        name: "Title Fight",
+        artist: "27",
+        path: "audio/toptracks/Title Fight - 27.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/floralgreen.jpg",
+    cover: "img/albums/floralgreen.jpg",
     artist: "Title Fight",
     title: "Floral Green",
     runtime: "32 Minutes",
     genres: "Punk, Alternative Rock, Indie Rock",
     topTrack: "Make You Cry",
     color: "#0C3441",
-    tracks: [{
-          name: "Title Fight",
-          artist:"Make You Cry",
-          path:"../audio/toptracks/Title Fight - Make You Cry.mp3"
-      },]
+    tracks: [
+      {
+        name: "Title Fight",
+        artist: "Make You Cry",
+        path: "audio/toptracks/Title Fight - Make You Cry.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/inlet.jpg",
+    cover: "img/albums/inlet.jpg",
     artist: "HUM",
     title: "Inlet",
     runtime: "55 Minutes",
     genres: "Rock, Progressive Rock",
     topTrack: "The Summoning",
     color: "#504D6C",
-    tracks: [{
-          name: "HUM",
-          artist:"The Summoning",
-          path:"../audio/toptracks/HUM - The Summoning.mp3"
-      },]
+    tracks: [
+      {
+        name: "HUM",
+        artist: "The Summoning",
+        path: "audio/toptracks/HUM - The Summoning.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/betweentherichness.jpg",
+    cover: "img/albums/betweentherichness.jpg",
     artist: "Fiddlehead",
     title: "Between The Richness",
     runtime: "25 Minutes",
     genres: "Alternative Rock, Indie Rock",
     topTrack: "Heart To Heart",
-    color: "#3E8FAC",
-    tracks: [{
-          name: "Fiddlehead",
-          artist:"Heart To Heart",
-          path:"../audio/toptracks/Fiddlehead - Heart To Heart.mp3"
-      },]
+    color: "#2F6B81",
+    tracks: [
+      {
+        name: "Fiddlehead",
+        artist: "Heart To Heart",
+        path: "audio/toptracks/Fiddlehead - Heart To Heart.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/superheaven.jpg",
+    cover: "img/albums/superheaven.jpg",
     artist: "Superheaven",
     title: "Superheaven",
     runtime: "31 Minutes",
     genres: "Metal, Alternative Rock, Rock",
     topTrack: "Long Gone",
     color: "#5A251F",
-    tracks: [{
-          name: "Superheaven",
-          artist:"Long Gone",
-          path:"../audio/toptracks/Superheaven - Long Gone.mp3"
-      },]
+    tracks: [
+      {
+        name: "Superheaven",
+        artist: "Long Gone",
+        path: "audio/toptracks/Superheaven - Long Gone.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/jar.jpg",
+    cover: "img/albums/jar.jpg",
     artist: "Superheaven",
     title: "Jar",
     runtime: "41 Minutes",
     genres: "Alternative Rock, Rock, Indie Rock",
     topTrack: "Around The Railing",
     color: "#3C7096",
-    tracks: [{
-          name: "Superheaven",
-          artist:"Around The Railing",
-          path:"../audio/toptracks/Superheaven - Around The Railing.mp3"
-      },]
+    tracks: [
+      {
+        name: "Superheaven",
+        artist: "Around The Railing",
+        path: "audio/toptracks/Superheaven - Around The Railing.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/stovall.jpg",
+    cover: "img/albums/stovall.jpg",
     artist: "Microwave",
     title: "Stovall",
     runtime: "38 Minutes",
     genres: "Alternative Rock, Rock, Indie Rock",
     topTrack: "Something Right",
-    color: "#b3a925",
-    tracks: [{
-          name: "Microwave",
-          artist:"Something Right",
-          path:"../audio/toptracks/Microwave - Something Right.mp3"
-      },]
+    color: "#514C11",
+    tracks: [
+      {
+        name: "Microwave",
+        artist: "Something Right",
+        path: "audio/toptracks/Microwave - Something Right.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/promiseeverything.jpg",
+    cover: "img/albums/promiseeverything.jpg",
     artist: "Basement",
     title: "Promise Everything",
     runtime: "28 Minutes",
     genres: "Alternative Rock, Rock, Indie Rock",
     topTrack: "For You The Moon",
-    color: "#6E9CCF",
-    tracks: [{
-          name: "Basement",
-          artist:"For You The Moon",
-          path:"../audio/toptracks/Basement - For You The Moon.mp3"
-      },]
+    color: "#3D5672",
+    tracks: [
+      {
+        name: "Basement",
+        artist: "For You The Moon",
+        path: "audio/toptracks/Basement - For You The Moon.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/besidemyself.jpg",
+    cover: "img/albums/besidemyself.jpg",
     artist: "Basement",
     title: "Beside Myself",
     runtime: "38 Minutes",
     genres: "Post-grunge, Alternative Rock, Indie Rock",
     topTrack: "Nothing Left",
     color: "#042750",
-    tracks: [{
-          name: "Basement",
-          artist:"Nothing Left",
-          path:"../audio/toptracks/Basement - Nothing Left.mp3"
-      },]
+    tracks: [
+      {
+        name: "Basement",
+        artist: "Nothing Left",
+        path: "audio/toptracks/Basement - Nothing Left.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/colourmeinkindness.jpg",
+    cover: "img/albums/colourmeinkindness.jpg",
     artist: "Basement",
     title: "Colourmeinkindness",
     runtime: "33 Minutes",
     genres: "Post-grunge, Alternative Rock, Indie Rock",
     topTrack: "Comfort",
-    color: "#D57719",
-    tracks: [{
-          name: "Basement",
-          artist:"Comfort",
-          path:"../audio/toptracks/Basement - Comfort.mp3"
-      },]
+    color: "#75410E",
+    tracks: [
+      {
+        name: "Basement",
+        artist: "Comfort",
+        path: "audio/toptracks/Basement - Comfort.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/youth.jpg",
+    cover: "img/albums/youth.jpg",
     artist: "Citizen",
     title: "Youth",
     runtime: "30 Minutes",
     genres: "Post-grunge, Alternative Rock, Indie Rock",
     topTrack: "The Summer",
     color: "#950B0D",
-    tracks: [{
-          name: "Citizen",
-          artist:"The Summer",
-          path:"../audio/toptracks/Citizen - The Summer.mp3"
-      },]
+    tracks: [
+      {
+        name: "Citizen",
+        artist: "The Summer",
+        path: "audio/toptracks/Citizen - The Summer.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/solongforever.jpg",
+    cover: "img/albums/solongforever.jpg",
     artist: "Palace",
     title: "So Long Forever",
     runtime: "42 Minutes",
     genres: "Indie Rock, Feel-good",
     topTrack: "It's Over",
-    color: "#259164",
-    tracks: [{
-          name: "Palace",
-          artist:"It's Over",
-          path:"../audio/toptracks/Palace - It's Over.mp3"
-      },]
+    color: "#1E7450",
+    tracks: [
+      {
+        name: "Palace",
+        artist: "It's Over",
+        path: "audio/toptracks/Palace - It's Over.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/iletitinandittookeverything.jpg",
+    cover: "img/albums/iletitinandittookeverything.jpg",
     artist: "Loathe",
     title: "I Let It In And It Took Everything",
     runtime: "49 Minutes",
     genres: "Metal, Hard Rock, Rock",
     topTrack: "A Sad Cartoon",
     color: "#000000",
-    tracks: [{
-          name: "Loathe",
-          artist:"A Sad Cartoon",
-          path:"../audio/toptracks/Loathe - A Sad Cartoon.mp3"
-      },]
+    tracks: [
+      {
+        name: "Loathe",
+        artist: "A Sad Cartoon",
+        path: "audio/toptracks/Loathe - A Sad Cartoon.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/werenotheretobeloved.jpeg",
+    cover: "img/albums/werenotheretobeloved.jpeg",
     artist: "Fleshwater",
     title: "We're Not Here to Be Loved",
     runtime: "27 Minutes",
     genres: "Hard Rock, Indie Rock",
     topTrack: "Linda Claire",
-    color: "#E09B2F",
-    tracks: [{
-          name: "Fleshwater",
-          artist:"Linda Claire",
-          path:"../audio/toptracks/Fleshwater - Linda Claire.mp3"
-      },]
+    color: "#654615",
+    tracks: [
+      {
+        name: "Fleshwater",
+        artist: "Linda Claire",
+        path: "audio/toptracks/Fleshwater - Linda Claire.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/peoplewatching.jpg",
+    cover: "img/albums/peoplewatching.jpg",
     artist: "156/Silence",
     title: "People Watching",
     runtime: "46 Minutes",
     genres: "Metal, Hard Rock",
     topTrack: "Target Acquired",
     color: "#84561F",
-    tracks: [{
-          name: "156/Silence",
-          artist:"Target Acquired",
-          path:"../audio/toptracks/156Silence - Target Acquired.mp3"
-      },]
+    tracks: [
+      {
+        name: "156/Silence",
+        artist: "Target Acquired",
+        path: "audio/toptracks/156Silence - Target Acquired.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/thefearoffear.png",
+    cover: "img/albums/thefearoffear.png",
     artist: "Spiritbox",
     title: "The Fear of Fear",
     runtime: "25 Minutes",
     genres: "Metal, Hard Rock",
     topTrack: "Too Close/Too Late",
     color: "#402A47",
-    tracks: [{
-          name: "Spiritbox",
-          artist:"Too Close/Too Late",
-          path:"../audio/toptracks/Spiritbox - Too Close Too Late.mp3"
-      },]
+    tracks: [
+      {
+        name: "Spiritbox",
+        artist: "Too Close/Too Late",
+        path: "audio/toptracks/Spiritbox - Too Close Too Late.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/yunemogarden.jpg",
+    cover: "img/albums/yunemogarden.jpg",
     artist: "Last Dinosaurs",
     title: "Yunemo Garden",
     runtime: "37 Minutes",
     genres: "Indie Pop, Bedroom Pop",
     topTrack: "Bass God",
-    color: "#485DA9",
-    tracks: [{
-          name: "Last Dinosaurs",
-          artist:"Bass God",
-          path:"../audio/toptracks/Last Dinosaurs - Bass God.mp3"
-      },]
+    color: "#3D4F90",
+    tracks: [
+      {
+        name: "Last Dinosaurs",
+        artist: "Bass God",
+        path: "audio/toptracks/Last Dinosaurs - Bass God.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/nownotyet.jpg",
+    cover: "img/albums/nownotyet.jpg",
     artist: "half•alive",
     title: "Now, Not Yet",
     runtime: "41 Minutes",
     genres: "Indie Pop, Bedroom Pop",
     topTrack: "Arrow",
-    color: "#D44F30",
-    tracks: [{
-          name: "half•alive",
-          artist:"Arrow",
-          path:"../audio/toptracks/halfalive - Arrow.mp3"
-      },]
+    color: "#7F2F1D",
+    tracks: [
+      {
+        name: "half•alive",
+        artist: "Arrow",
+        path: "audio/toptracks/halfalive - Arrow.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/invitationtohers.jpg",
+    cover: "img/albums/invitationtohers.jpg",
     artist: "Her's",
     title: "Invitation To Her's",
     runtime: "45 Minutes",
     genres: "Indie Pop, Bedroom Pop, Feel-good",
     topTrack: "Under Wraps",
     color: "#982A73",
-    tracks: [{
-          name: "Her's",
-          artist:"Under Wraps",
-          path:"../audio/toptracks/Her's - Under Wraps.mp3"
-      },]
+    tracks: [
+      {
+        name: "Her's",
+        artist: "Under Wraps",
+        path: "audio/toptracks/Her's - Under Wraps.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/songsofhers.jpg",
+    cover: "img/albums/songsofhers.jpg",
     artist: "Her's",
     title: "Songs of Her's",
     runtime: "34 Minutes",
     genres: "Indie Pop, Bedroom Pop, Feel-good",
     topTrack: "Dorothy",
     color: "#992266",
-    tracks: [{
-          name: "Her's",
-          artist:"Dorothy",
-          path:"../audio/toptracks/Her's - Dorothy.mp3"
-      },]
+    tracks: [
+      {
+        name: "Her's",
+        artist: "Dorothy",
+        path: "audio/toptracks/Her's - Dorothy.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/instantgratification.jpg",
+    cover: "img/albums/instantgratification.jpg",
     artist: "Dance Gavin Dance",
     title: "Instant Gratification",
     runtime: "42 Minutes",
     genres: "Post-hardcore, Alt Rock",
     topTrack: "Stroke God, Millionaire",
-    color: "#C87A54",
-    tracks: [{
-          name: "Dance Gavin Dance",
-          artist:"Stroke God, Millionaire",
-          path:"../audio/toptracks/Dance Gavin Dance - Stroke God, Millionaire.mp3"
-      },]
+    color: "#6E432E",
+    tracks: [
+      {
+        name: "Dance Gavin Dance",
+        artist: "Stroke God, Millionaire",
+        path: "audio/toptracks/Dance Gavin Dance - Stroke God, Millionaire.mp3",
+      },
+    ],
   },
   {
-    cover: "../img/albums/astrangertoyou.jpg",
+    cover: "img/albums/astrangertoyou.jpg",
     artist: "Loathe",
     title: "A Stranger To You",
     runtime: "55 Minutes",
     genres: "Metal, Metal-core",
     topTrack: "Harder To Pretend",
     color: "#3D4746",
-    tracks: [{
-          name: "Loathe",
-          artist:"Harder To Pretend",
-          path:"../audio/toptracks/Loathe -  Harder to Pretend.mp3"
-      },]
-  }
+    tracks: [
+      {
+        name: "Loathe",
+        artist: "Harder To Pretend",
+        path: "audio/toptracks/Loathe -  Harder to Pretend.mp3",
+      },
+    ],
+  },
 ];
 
-// Footer marquee linkbacks — add/remove/reorder entries here,
-// the banner track renders straight from this array.
 const banners = [
   {
     url: "https://jamescyberzone.neocities.org/",
     img: "https://jamescyberzone.neocities.org/Button1.png",
-    alt: "James Cyberzone"
+    alt: "James Cyberzone",
   },
   {
     url: "https://frutigeraeroarchive.org/",
     img: "https://frutigeraeroarchive.org/images/buttons/frutigeraeroarchive_button_legacy.png",
-    alt: "Frutiger Aero Archive"
+    alt: "Frutiger Aero Archive",
   },
   {
     url: "https://webgore.neocities.org/",
     img: "https://webgore.neocities.org/images/sitebutton.gif",
-    alt: "Webgore"
+    alt: "Webgore",
   },
   {
     url: "https://camo93.neocities.org/",
     img: "https://camo93.neocities.org/button.png",
-    alt: "Camo93"
+    alt: "Camo93",
   },
   {
     url: "https://orloktopia.neocities.org/",
     img: "https://orloktopia.neocities.org/images/88x31/orloktopia88x31-MARK2.png",
-    alt: "Orloktopia"
+    alt: "Orloktopia",
   },
   {
     url: "https://petrapixel.neocities.org/",
     img: "https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif",
-    alt: "petrapixel"
+    alt: "petrapixel",
   },
   {
     url: "https://onio.club",
     img: "https://onio.club/buttons/oniobutton2.gif",
-    alt: "onio.club"
+    alt: "onio.club",
   },
   {
     url: "https://digimechanoid.com/",
     img: "https://digimechanoid.com/images/digimechanoidbloodbutton.gif",
-    alt: "digimechanoid"
+    alt: "digimechanoid",
   },
   {
     url: "https://ascalaphid.com",
     img: "https://ascalaphid.com/assets/widgets/ascalaphidwidget.gif",
     alt: "ascalaphid",
-  }
+  },
 ];
 
 // Set true if you want the badge order shuffled on every page load.
@@ -474,7 +533,9 @@ function renderBanners() {
     ? [...banners].sort(() => Math.random() - 0.5)
     : banners;
 
-  const groupHTML = list.map(b => `
+  const groupHTML = list
+    .map(
+      (b) => `
     <a href="${b.url}" target="_blank" rel="noopener">
       <img
         class="d-banner"
@@ -483,7 +544,9 @@ function renderBanners() {
         loading="lazy"
       >
     </a>
-  `).join("");
+  `,
+    )
+    .join("");
 
   track.innerHTML = `
     <div class="banner-group">
@@ -507,7 +570,7 @@ function renderPuppyElement(container) {
 }
 
 function shuffleGallery() {
-  const gallery = document.querySelector('.photos-preview');
+  const gallery = document.querySelector(".photos-preview");
   if (!gallery) return;
 
   const photos = Array.from(gallery.children);
@@ -517,7 +580,7 @@ function shuffleGallery() {
     [photos[i], photos[j]] = [photos[j], photos[i]];
   }
 
-  photos.forEach(photo => gallery.appendChild(photo));
+  photos.forEach((photo) => gallery.appendChild(photo));
 }
 
 function showFact() {
@@ -530,6 +593,8 @@ function showFact() {
 // Scoped per-instance so multiple players can exist on the page
 // at once without stepping on each other's state, and without
 // colliding with the global player wired up in player.js.
+// Each instance registers its audio + pause callback in allTrackPlayers
+// so playing one can stop every other one currently playing.
 
 function trackPlayerHTML() {
   return `
@@ -565,13 +630,29 @@ function createTrackPlayer(container, tracks) {
   const totalDurationEl = container.querySelector(".total-duration");
   const audio = container.querySelector("audio");
 
-  if (!trackSelect || !playpauseBtn || !seekSlider || !currTimeEl || !totalDurationEl || !audio) return;
+  if (
+    !trackSelect ||
+    !playpauseBtn ||
+    !seekSlider ||
+    !currTimeEl ||
+    !totalDurationEl ||
+    !audio
+  )
+    return;
 
   audio.volume = 0.2;
 
   let trackIndex = 0;
   let isPlaying = false;
   let updateTimer;
+
+  const playerEntry = {
+    audio: audio,
+    pause: function () {
+      pauseTrack();
+    },
+  };
+  allTrackPlayers.push(playerEntry);
 
   function populateDropdown() {
     trackSelect.innerHTML = "";
@@ -594,7 +675,7 @@ function createTrackPlayer(container, tracks) {
     clearInterval(updateTimer);
     resetValues();
 
-    audio.src = tracks[index].path;
+    audio.src = ROOT + tracks[index].path;
     audio.load();
 
     updateTimer = setInterval(seekUpdate, 1000);
@@ -602,6 +683,12 @@ function createTrackPlayer(container, tracks) {
   }
 
   function playTrack() {
+    allTrackPlayers.forEach((entry) => {
+      if (entry.audio !== audio && !entry.audio.paused) {
+        entry.pause();
+      }
+    });
+
     audio.play();
     isPlaying = true;
     playpauseBtn.innerHTML = `
@@ -628,7 +715,7 @@ function createTrackPlayer(container, tracks) {
   }
 
   function nextTrack() {
-    trackIndex = (trackIndex < tracks.length - 1) ? trackIndex + 1 : 0;
+    trackIndex = trackIndex < tracks.length - 1 ? trackIndex + 1 : 0;
     loadTrack(trackIndex);
     playTrack();
   }
@@ -658,7 +745,7 @@ function createTrackPlayer(container, tracks) {
     }
   }
 
-  trackSelect.addEventListener("change", function() {
+  trackSelect.addEventListener("change", function () {
     trackIndex = parseInt(this.value, 10);
     loadTrack(trackIndex);
     playTrack();
@@ -672,33 +759,101 @@ function createTrackPlayer(container, tracks) {
   loadTrack(trackIndex);
 }
 
+function buildAlbumCard(album) {
+  const albumEl = document.createElement("div");
+  albumEl.className = "album";
+  albumEl.innerHTML = `
+    <img class="album-cover" src="${ROOT}${album.cover}">
+    <p>Artist: <span style="color:${album.color}">${album.artist}</span></p>
+    <p>Title: <span style="color:${album.color}">${album.title}</span></p>
+    <p>Runtime: <span style="color:${album.color}">${album.runtime}</span></p>
+    <p>Genre(s): <span style="color:${album.color}">${album.genres}</span></p>
+    <p>Top Track: <span style="color:${album.color}">${album.topTrack}</span></p>
+    ${album.tracks && album.tracks.length ? trackPlayerHTML() : ""}
+  `;
+
+  if (album.tracks && album.tracks.length) {
+    createTrackPlayer(albumEl, album.tracks);
+  }
+
+  return albumEl;
+}
+
 function renderTopAlbums() {
   const container = document.getElementById("top-3-albums");
   if (!container) return;
 
   container.innerHTML = "";
 
-  const randomAlbums = [...albums]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3);
+  const randomAlbums = [...albums].sort(() => Math.random() - 0.5).slice(0, 3);
 
-  randomAlbums.forEach(album => {
-    const albumEl = document.createElement("div");
-    albumEl.className = "album";
-    albumEl.innerHTML = `
-      <img class="album-cover" src="${album.cover}">
-      <p>Artist: <span style="color:${album.color}">${album.artist}</span></p>
-      <p>Title: <span style="color:${album.color}">${album.title}</span></p>
-      <p>Runtime: <span style="color:${album.color}">${album.runtime}</span></p>
-      <p>Genre(s): <span style="color:${album.color}">${album.genres}</span></p>
-      <p>Top Track: <span style="color:${album.color}">${album.topTrack}</span></p>
-      ${album.tracks && album.tracks.length ? trackPlayerHTML() : ""}
-    `;
-    container.appendChild(albumEl);
+  randomAlbums.forEach((album) => {
+    container.appendChild(buildAlbumCard(album));
+  });
+}
 
-    if (album.tracks && album.tracks.length) {
-      createTrackPlayer(albumEl, album.tracks);
-    }
+function getFilterLetter(artist) {
+  let name = artist.trim();
+  name = name.replace(/^the\s+/i, "");
+  const firstChar = name.charAt(0).toUpperCase();
+  return /^[A-Z]$/.test(firstChar) ? firstChar : "#";
+}
+
+function renderAlphabetFilter() {
+  const container = document.getElementById("alphabet-filter");
+  if (!container) return;
+
+  const letters = ["#", ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")];
+
+  container.innerHTML = letters
+    .map(
+      (letter) => `
+    <button type="button" class="window-button letter-btn" data-letter="${letter}">${letter}</button>
+  `,
+    )
+    .join("");
+
+  container.querySelectorAll(".letter-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const letter = btn.dataset.letter;
+      currentLetterFilter = currentLetterFilter === letter ? null : letter;
+      updateLetterButtonStates();
+      renderAllAlbums();
+    });
+  });
+
+  updateLetterButtonStates();
+}
+
+function updateLetterButtonStates() {
+  document.querySelectorAll(".letter-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.letter === currentLetterFilter);
+  });
+}
+
+function renderAllAlbums() {
+  const container = document.getElementById("all-albums-grid");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  const filteredAlbums = currentLetterFilter
+    ? albums.filter(
+        (album) => getFilterLetter(album.artist) === currentLetterFilter,
+      )
+    : albums;
+
+  const sortedAlbums = [...filteredAlbums].sort((a, b) =>
+    a.artist.localeCompare(b.artist, undefined, { sensitivity: "base" }),
+  );
+
+  if (!sortedAlbums.length) {
+    container.innerHTML = `<p class="no-results">No albums found for "${currentLetterFilter}".</p>`;
+    return;
+  }
+
+  sortedAlbums.forEach((album) => {
+    container.appendChild(buildAlbumCard(album));
   });
 }
 
@@ -727,13 +882,7 @@ function setupPixelUpload() {
         smallCanvas.width = Math.floor(img.width / pixelSize);
         smallCanvas.height = Math.floor(img.height / pixelSize);
 
-        smallCtx.drawImage(
-          img,
-          0,
-          0,
-          smallCanvas.width,
-          smallCanvas.height
-        );
+        smallCtx.drawImage(img, 0, 0, smallCanvas.width, smallCanvas.height);
 
         canvas.width = img.width;
         canvas.height = img.height;
@@ -748,7 +897,7 @@ function setupPixelUpload() {
           0,
           0,
           canvas.width,
-          canvas.height
+          canvas.height,
         );
       };
 
@@ -759,36 +908,38 @@ function setupPixelUpload() {
   });
 }
 
-const puppySlot = document.getElementById('puppy-slot');
+const puppySlot = document.getElementById("puppy-slot");
 if (puppySlot) renderPuppyElement(puppySlot);
 
-const mercuryGif = document.getElementById('mercuryGif');
+const mercuryGif = document.getElementById("mercuryGif");
 if (mercuryGif) {
-    mercuryGif.addEventListener('click', function() {
-        const sound = document.getElementById('mercurySound');
-        sound.currentTime = 0;
-        sound.play();
-    });
+  mercuryGif.addEventListener("click", function () {
+    const sound = document.getElementById("mercurySound");
+    sound.currentTime = 0;
+    sound.play();
+  });
 }
 
-const musicalNotesGif = document.getElementById('musicalNotesGif');
+const musicalNotesGif = document.getElementById("musicalNotesGif");
 if (musicalNotesGif) {
-    musicalNotesGif.addEventListener('click', function() {
-        const sounds = ['pianoSound1', 'pianoSound2', 'pianoSound3'];
-        const randomId = sounds[Math.floor(Math.random() * sounds.length)];
-        const sound = document.getElementById(randomId);
+  musicalNotesGif.addEventListener("click", function () {
+    const sounds = ["pianoSound1", "pianoSound2", "pianoSound3"];
+    const randomId = sounds[Math.floor(Math.random() * sounds.length)];
+    const sound = document.getElementById(randomId);
 
-        sound.currentTime = 0;
-        sound.play();
-    });
+    sound.currentTime = 0;
+    sound.play();
+  });
 }
 
-document.querySelectorAll('audio').forEach(function(audio) {
-    audio.volume = 0.2;
+document.querySelectorAll("audio").forEach(function (audio) {
+  audio.volume = 0.2;
 });
 
 shuffleGallery();
 renderTopAlbums();
+renderAlphabetFilter();
+renderAllAlbums();
 setupPixelUpload();
 showFact();
 renderBanners();

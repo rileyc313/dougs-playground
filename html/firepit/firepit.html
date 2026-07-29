@@ -20,8 +20,8 @@
             cursor: url('../../misc/carmageddon/1.cur'), auto;
         }
 
-        a, 
-        label, 
+        a,
+        label,
         button,
         label.upload-btn,
         .mercury-header-gif,
@@ -34,7 +34,7 @@
             cursor: url('../../misc/carmageddon/2.cur'), auto;
         }
 
-        iframe{
+        iframe {
             cursor: url('./misc/carmageddon/1.cur'), auto;
         }
 
@@ -42,9 +42,11 @@
             display: none;
             width: 100%;
         }
+
         .firepit-img.active {
             display: block;
         }
+
         #themeButtons {
             display: grid !important;
             grid-template-columns: repeat(2, 1fr);
@@ -94,27 +96,34 @@
         <div class="container-main flex-column">
             <div class="bubble">
                 <p style="font-weight: 900;">Welcome to the fire pit&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="../../index2.html">back</a></p>
+                    <a href="../../index2.html">back</a>
+                </p>
                 <p>Stay as long as you like, and choose from our variety of themes that suit your exquisite taste.</p>
-                <div style="display: flex; width: 100%; justify-content: center; align-items: center; flex-direction: column;">
+                <div
+                    style="display: flex; width: 100%; justify-content: center; align-items: center; flex-direction: column;">
                     <div class="buttons" id="themeButtons">
                         <button class="upload-btn theme-btn active" data-theme="classic">Classic</button>
-                        <button class="upload-btn theme-btn"        data-theme="darksouls">Dark Souls</button>
-                        <button class="upload-btn theme-btn"        data-theme="osrs">OSRS</button>
-                        <button class="upload-btn theme-btn"        data-theme="destiny">Destiny</button>
-                        <button class="upload-btn theme-btn"         data-theme="vader">Vader</button>
-                        <button class="upload-btn theme-btn"         data-theme="skeleton">Skeleton</button>
+                        <button class="upload-btn theme-btn" data-theme="darksouls">Dark Souls</button>
+                        <button class="upload-btn theme-btn" data-theme="osrs">OSRS</button>
+                        <button class="upload-btn theme-btn" data-theme="destiny">Destiny</button>
+                        <button class="upload-btn theme-btn" data-theme="vader">Vader</button>
+                        <button class="upload-btn theme-btn" data-theme="skeleton">Skeleton</button>
+                    </div>
                 </div>
             </div>
-            </div>
-            
+
             <div class="bubble" id="firepitStage" style="position: relative; padding: 0; overflow: hidden;">
-                <img id="img-classic" class="bubble-fitted-image firepit-img active" src="../../img/firepit/classic.gif" alt="Classic">
-                <img id="img-darksouls"   class="bubble-fitted-image firepit-img"        src="../../img/firepit/darksouls.gif"   alt="Dark Souls">
-                <img id="img-osrs"   class="bubble-fitted-image firepit-img"        src="../../img/firepit/osrs.gif"   alt="OSRS">
-                <img id="img-destiny"   class="bubble-fitted-image firepit-img"        src="../../img/firepit/destiny.gif"   alt="Destiny">
-                <img id="img-vader"   class="bubble-fitted-image firepit-img"        src="../../img/firepit/vader.gif"   alt="Vader">
-                <img id="img-skeleton"   class="bubble-fitted-image firepit-img"        src="../../img/firepit/skeleton.gif"   alt="Skeleton">
+                <img id="img-classic" class="bubble-fitted-image firepit-img active" src="../../img/firepit/classic.gif"
+                    alt="Classic">
+                <img id="img-darksouls" class="bubble-fitted-image firepit-img" src="../../img/firepit/darksouls.gif"
+                    alt="Dark Souls">
+                <img id="img-osrs" class="bubble-fitted-image firepit-img" src="../../img/firepit/osrs.gif" alt="OSRS">
+                <img id="img-destiny" class="bubble-fitted-image firepit-img" src="../../img/firepit/destiny.gif"
+                    alt="Destiny">
+                <img id="img-vader" class="bubble-fitted-image firepit-img" src="../../img/firepit/vader.gif"
+                    alt="Vader">
+                <img id="img-skeleton" class="bubble-fitted-image firepit-img" src="../../img/firepit/skeleton.gif"
+                    alt="Skeleton">
                 <button id="fullscreenToggle" class="upload-btn" type="button">⛶ Fullscreen</button>
                 <button id="soundToggle" class="upload-btn" type="button">🔊 Mute</button>
             </div>
