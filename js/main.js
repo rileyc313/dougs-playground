@@ -518,6 +518,11 @@ const banners = [
     img: "https://ascalaphid.com/assets/widgets/ascalaphidwidget.gif",
     alt: "ascalaphid",
   },
+  {
+    url: "https://tertiaryapocalypse.neocities.org",
+    img: "https://tertiaryapocalypse.neocities.org/button/tertiaryapocalypse.png",
+    alt: "tertiaryapocalypse",
+  }
 ];
 
 // Set true if you want the badge order shuffled on every page load.
