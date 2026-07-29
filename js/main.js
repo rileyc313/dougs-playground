@@ -281,6 +281,79 @@ const albums = [
   }
 ];
 
+// Footer marquee linkbacks — add/remove/reorder entries here,
+// the banner track renders straight from this array.
+const banners = [
+  {
+    url: "https://jamescyberzone.neocities.org/",
+    img: "https://jamescyberzone.neocities.org/Button1.png",
+    alt: "James Cyberzone"
+  },
+  {
+    url: "https://frutigeraeroarchive.org/",
+    img: "https://frutigeraeroarchive.org/images/buttons/frutigeraeroarchive_button_legacy.png",
+    alt: "Frutiger Aero Archive"
+  },
+  {
+    url: "https://webgore.neocities.org/",
+    img: "https://webgore.neocities.org/images/sitebutton.gif",
+    alt: "Webgore"
+  },
+  {
+    url: "https://camo93.neocities.org/",
+    img: "https://camo93.neocities.org/button.png",
+    alt: "Camo93"
+  },
+  {
+    url: "https://orloktopia.neocities.org/",
+    img: "https://orloktopia.neocities.org/images/88x31/orloktopia88x31-MARK2.png",
+    alt: "Orloktopia"
+  },
+  {
+    url: "https://petrapixel.neocities.org/",
+    img: "https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif",
+    alt: "petrapixel"
+  },
+  {
+    url: "https://onio.club",
+    img: "https://onio.club/buttons/oniobutton2.gif",
+    alt: "onio.club"
+  },
+  {
+    url: "https://digimechanoid.com/",
+    img: "https://digimechanoid.com/images/digimechanoidbloodbutton.gif",
+    alt: "digimechanoid"
+  }
+];
+
+// Set true if you want the badge order shuffled on every page load.
+// Both marquee groups stay identical to each other even when shuffled,
+// so the seamless loop never stutters.
+const shuffleBanners = true;
+
+function renderBanners() {
+  const track = document.getElementById('bannerTrack');
+  if (!track) return;
+
+  const list = shuffleBanners
+    ? [...banners].sort(() => Math.random() - 0.5)
+    : banners;
+
+  const groupHTML = list.map(b => `
+    <a href="${b.url}" target="_blank" rel="noopener">
+      <img src="${b.img}" alt="${b.alt || ''}">
+    </a>
+  `).join('');
+
+  // Two identical groups back to back — the CSS marquee animates
+  // translateX(-50%), which only loops seamlessly if the track's
+  // total width is exactly double one group's width.
+  track.innerHTML = `
+    <div class="banner-group">${groupHTML}</div>
+    <div class="banner-group" aria-hidden="true">${groupHTML}</div>
+  `;
+}
+
 function renderPuppyElement(container) {
   const num = Math.floor(Math.random() * puppyCount) + 1;
   console.log(num);
@@ -394,20 +467,26 @@ function setupPixelUpload() {
 const puppySlot = document.getElementById('puppy-slot');
 if (puppySlot) renderPuppyElement(puppySlot);
 
-document.getElementById('mercuryGif').addEventListener('click', function() {
-    const sound = document.getElementById('mercurySound');
-    sound.currentTime = 0;
-    sound.play();
-});
+const mercuryGif = document.getElementById('mercuryGif');
+if (mercuryGif) {
+    mercuryGif.addEventListener('click', function() {
+        const sound = document.getElementById('mercurySound');
+        sound.currentTime = 0;
+        sound.play();
+    });
+}
 
-document.getElementById('musicalNotesGif').addEventListener('click', function() {
-    const sounds = ['pianoSound1', 'pianoSound2', 'pianoSound3'];
-    const randomId = sounds[Math.floor(Math.random() * sounds.length)];
-    const sound = document.getElementById(randomId);
+const musicalNotesGif = document.getElementById('musicalNotesGif');
+if (musicalNotesGif) {
+    musicalNotesGif.addEventListener('click', function() {
+        const sounds = ['pianoSound1', 'pianoSound2', 'pianoSound3'];
+        const randomId = sounds[Math.floor(Math.random() * sounds.length)];
+        const sound = document.getElementById(randomId);
 
-    sound.currentTime = 0;
-    sound.play();
-});
+        sound.currentTime = 0;
+        sound.play();
+    });
+}
 
 document.querySelectorAll('audio').forEach(function(audio) {
     audio.volume = 0.2;
@@ -417,4 +496,5 @@ shuffleGallery();
 renderTopAlbums();
 setupPixelUpload();
 showFact();
+renderBanners();
 setInterval(showFact, 10000);
