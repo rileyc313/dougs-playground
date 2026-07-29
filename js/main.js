@@ -467,7 +467,7 @@ const banners = [
 const shuffleBanners = true;
 
 function renderBanners() {
-  const track = document.getElementById('bannerTrack');
+  const track = document.getElementById("bannerTrack");
   if (!track) return;
 
   const list = shuffleBanners
@@ -476,16 +476,22 @@ function renderBanners() {
 
   const groupHTML = list.map(b => `
     <a href="${b.url}" target="_blank" rel="noopener">
-      <img src="${b.img}" alt="${b.alt || ''}">
+      <img
+        class="d-banner"
+        src="${b.img}"
+        alt="${b.alt || ""}"
+        loading="lazy"
+      >
     </a>
-  `).join('');
+  `).join("");
 
-  // Two identical groups back to back — the CSS marquee animates
-  // translateX(-50%), which only loops seamlessly if the track's
-  // total width is exactly double one group's width.
   track.innerHTML = `
-    <div class="banner-group">${groupHTML}</div>
-    <div class="banner-group" aria-hidden="true">${groupHTML}</div>
+    <div class="banner-group">
+      ${groupHTML}
+    </div>
+    <div class="banner-group">
+      ${groupHTML}
+    </div>
   `;
 }
 
