@@ -538,9 +538,9 @@ function trackPlayerHTML() {
         <select disabled class="track-select"></select>
         <div class="controls">
           <div class="seeking">
-            <div class="current-time">0:00</div>
+            <div style="font-family: 'Dogica'; font-size: 7px;" class="current-time">0:00</div>
             <input type="range" min="1" max="100" value="0" class="seek_slider">
-            <div class="total-duration">0:00</div>
+            <div style="font-family: 'Dogica'; font-size: 7px;" class="total-duration">0:00</div>
           </div>
           <div class="player-buttons">
             <button class="window-button playpause-track" type="button">
