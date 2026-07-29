@@ -323,6 +323,11 @@ const banners = [
     url: "https://digimechanoid.com/",
     img: "https://digimechanoid.com/images/digimechanoidbloodbutton.gif",
     alt: "digimechanoid"
+  },
+  {
+    url: "https://ascalaphid.com",
+    img: "https://ascalaphid.com/assets/widgets/ascalaphidwidget.gif",
+    alt: "ascalaphid",
   }
 ];
 
