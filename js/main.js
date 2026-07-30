@@ -567,7 +567,7 @@ function renderPuppyElement(container) {
   const num = Math.floor(Math.random() * puppyCount) + 1;
   console.log(num);
   container.innerHTML = `
-    <div class="container-left bubble" style="border-radius: 0px;">
+    <div class="container-left" style="border-radius: 0px;">
       <p><strong>Puppy Picture</strong>:</p>
       <img class="doggo-pic" src="../../img/gallery/puppy/p${num}.png"/>
     </div>
@@ -948,3 +948,47 @@ setupPixelUpload();
 showFact();
 renderBanners();
 setInterval(showFact, 10000);
+
+// ---- Loading overlay ----
+// Waits for window 'load' (every image, audio tag, and external script has
+// finished, not just the DOM) before fading the overlay out. Adds a small
+// minimum-display floor so it doesn't just flash on fast connections.
+(function handleLoadingOverlay() {
+    const overlay = document.getElementById("loading-overlay");
+    if (!overlay) return;
+
+    const bar = overlay.querySelector(".loading-bar-fill");
+
+    let progress = 0;
+
+    const timer = setInterval(() => {
+        // Slowly approach 90%
+        progress += Math.random() * 6;
+
+        if (progress > 90)
+            progress = 90;
+
+        bar.style.width = progress + "%";
+    }, 120);
+
+    function hideOverlay() {
+        clearInterval(timer);
+
+        // Fill to 100%
+        bar.style.width = "100%";
+
+        setTimeout(() => {
+            overlay.classList.add("loaded");
+
+            setTimeout(() => {
+                overlay.remove();
+            }, 400);
+        }, 300);
+    }
+
+    if (document.readyState === "complete") {
+        hideOverlay();
+    } else {
+        window.addEventListener("load", hideOverlay);
+    }
+})();

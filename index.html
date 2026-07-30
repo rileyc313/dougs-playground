@@ -104,29 +104,7 @@
         <a href="../../index2.html" id="playLink" style="text-decoration: none; color: inherit;">
             <p class="come-play">Come play.</p>
         </a>
-
-        <div class="loading-box" id="loadingBox">
-            <img class="loading-image" src="./img/albums/WelcomeMessage-3407311949.png" alt="Welcome">
-            <div class="loading-bar">
-                <div class="loading-bar-fill"></div>
-            </div>
-        </div>
     </div>
-
-    <script>
-        document.getElementById('playLink').addEventListener('click', function (e) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-
-            document.getElementById('splashImage').style.display = 'none';
-            this.style.display = 'none';
-            document.getElementById('loadingBox').classList.add('active');
-
-            setTimeout(() => {
-                window.location.href = href;
-            }, 2500);
-        });
-    </script>
 </body>
 
 </html>
