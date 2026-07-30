@@ -231,7 +231,7 @@ ol {
 }
 
 .album-cover {
-    max-width: 230px;
+    max-width: 100%;
 }
 
 .album p {
@@ -608,7 +608,7 @@ ol {
     }
 
     .album-cover {
-        max-width: 300px;
+        max-width: 100%;
     }
 
 
@@ -632,30 +632,8 @@ body {
     background: black;
 }
 
-.main-body {
-    animation: textShadow 2s infinite;
-}
-
-@keyframes textShadow {
-    0% {
-        text-shadow:
-            0.4px 0 0 rgba(255,0,0,0.5),
-            -0.4px 0 0 rgba(0,255,255,0.5);
-    }
-    50% {
-        text-shadow:
-            -0.4px 0 0 rgba(255,0,0,0.5),
-            0.4px 0 0 rgba(0,255,255,0.5);
-    }
-    100% {
-        text-shadow:
-            0.4px 0 0 rgba(255,0,0,0.5),
-            -0.4px 0 0 rgba(0,255,255,0.5);
-    }
-}
-
 body {
-    filter: contrast(1.05) brightness(1.10);
+    filter: contrast(1.05) brightness(1.0);
 }
 
  :root {
