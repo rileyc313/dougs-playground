@@ -402,7 +402,7 @@ const albums = [
       {
         name: "half•alive",
         artist: "Arrow",
-        path: "audio/toptracks/halfalive - Arrow.mp3",
+        path: "audio/toptracks/halfalive - arrow.mp3",
       },
     ],
   },

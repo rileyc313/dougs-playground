@@ -218,8 +218,8 @@ ol {
 
 .musical-notes {
     position: absolute;
-    top: -40px;
-    right: -50px;
+    top: -50px;
+    right: -55px;
     rotate: 5deg;
     max-width: 100px;
 }
