@@ -773,7 +773,6 @@ function buildAlbumCard(album) {
     <p>Title: <span style="color:${album.color}">${album.title}</span></p>
     <p>Runtime: <span style="color:${album.color}">${album.runtime}</span></p>
     <p>Genre(s): <span style="color:${album.color}">${album.genres}</span></p>
-    <p>Top Track: <span style="color:${album.color}">${album.topTrack}</span></p>
     ${album.tracks && album.tracks.length ? trackPlayerHTML() : ""}
   `;
 

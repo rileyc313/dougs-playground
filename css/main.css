@@ -350,14 +350,31 @@ ol {
 }
 
 .upload-btn {
-    display: inline-block;
-    padding: 8px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 12px;
+    min-width: 75px;
+    min-height: 22px;
+
     font-family: "Dogica";
     font-size: 8px;
-    background: #fff;
-    border: 2px solid #000;
-    cursor: pointer;
-    transition: all 0.1s ease;
+    color: #000;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+
+    background: #c0c0c0;
+
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+
+    box-shadow:
+        inset -1px -1px 0 #808080,
+        inset 1px 1px 0 #dfdfdf;
 }
 
 .upload-btn:hover {
@@ -519,9 +536,26 @@ ol {
         order: 11;
     }
 
-    .buttons {
+    .firepitcontainer {
         order: 12;
+    }
+
+    .buttons {
+        order: 13;
         margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 1%;
+    }
+
+    
+
+    .buttons > *:nth-child(odd) {
+        justify-self: center;
+    }
+
+    .buttons > *:nth-child(even) {
+        justify-self: start;
     }
 
     .header {
