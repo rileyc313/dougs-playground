@@ -189,6 +189,24 @@ ol {
     left: -60px;
 }
 
+.mercury-about-gif {
+    max-width: 200px;
+    height: 200px;
+    rotate: 10deg;
+    position: absolute;
+    bottom: -80px;
+    right: -60px;
+}
+
+.riley-about-gif {
+    max-width: 200px;
+    height: 200px;
+    rotate: -10deg;
+    position: absolute;
+    top: -120px;
+    right: -70px;
+}
+
 .header-title {
     position: relative;
     top: -30px;
@@ -623,6 +641,14 @@ ol {
 
     .footer-container {
         margin-top: 50px;
+    }
+
+    .riley-about-gif,
+    .mercury-about-gif {
+        position: static;
+        display: block;
+        margin: -40px auto 10px auto;
+        rotate: 0deg;
     }
 }
 
