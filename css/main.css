@@ -18,6 +18,11 @@ iframe{
     cursor: url('../misc/carmageddon/1.cur'), auto;
 }
 
+.audio-btn {
+    display:flex;
+    justify-content: center;
+}
+
 p,
 ol,
 ul,

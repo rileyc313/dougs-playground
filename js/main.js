@@ -522,7 +522,7 @@ const banners = [
     url: "https://tertiaryapocalypse.neocities.org",
     img: "https://tertiaryapocalypse.neocities.org/button/tertiaryapocalypse.png",
     alt: "tertiaryapocalypse",
-  }
+  },
 ];
 
 // Set true if you want the badge order shuffled on every page load.
@@ -954,41 +954,81 @@ setInterval(showFact, 10000);
 // finished, not just the DOM) before fading the overlay out. Adds a small
 // minimum-display floor so it doesn't just flash on fast connections.
 (function handleLoadingOverlay() {
-    const overlay = document.getElementById("loading-overlay");
-    if (!overlay) return;
+  const overlay = document.getElementById("loading-overlay");
+  if (!overlay) return;
 
-    const bar = overlay.querySelector(".loading-bar-fill");
+  const bar = overlay.querySelector(".loading-bar-fill");
 
-    let progress = 0;
+  let progress = 0;
 
-    const timer = setInterval(() => {
-        // Slowly approach 90%
-        progress += Math.random() * 6;
+  const timer = setInterval(() => {
+    // Slowly approach 90%
+    progress += Math.random() * 6;
 
-        if (progress > 90)
-            progress = 90;
+    if (progress > 90) progress = 90;
 
-        bar.style.width = progress + "%";
-    }, 120);
+    bar.style.width = progress + "%";
+  }, 120);
 
-    function hideOverlay() {
-        clearInterval(timer);
+  function hideOverlay() {
+    clearInterval(timer);
 
-        // Fill to 100%
-        bar.style.width = "100%";
+    // Fill to 100%
+    bar.style.width = "100%";
 
-        setTimeout(() => {
-            overlay.classList.add("loaded");
+    setTimeout(() => {
+      overlay.classList.add("loaded");
 
-            setTimeout(() => {
-                overlay.remove();
-            }, 400);
-        }, 300);
-    }
+      setTimeout(() => {
+        overlay.remove();
+      }, 400);
+    }, 300);
+  }
 
-    if (document.readyState === "complete") {
-        hideOverlay();
-    } else {
-        window.addEventListener("load", hideOverlay);
-    }
+  if (document.readyState === "complete") {
+    hideOverlay();
+  } else {
+    window.addEventListener("load", hideOverlay);
+  }
 })();
+
+const btn = document.getElementById("myButton");
+const btnImg = document.getElementById("btnImg");
+const audio = document.getElementById("btnAudio");
+
+const IDLE_SRC = "../../img/redbutton1.png";
+const PRESSED_SRC = "../../img/redbutton2.png";
+
+const sounds = [
+  "../../audio/buttonsounds/chicken.mp3",
+  "../../audio/buttonsounds/chickenscream.mp3",
+  "../../audio/buttonsounds/fart.mp3",
+  "../../audio/buttonsounds/kiss.mp3",
+  "../../audio/buttonsounds/mousesqueak.mp3",
+  "../../audio/buttonsounds/oof.mp3",
+  "../../audio/buttonsounds/quack.mp3",
+  "../../audio/buttonsounds/vineboom.mp3",
+];
+
+let lastSound = null;
+
+function getRandomSound() {
+  let choice;
+  do {
+    choice = sounds[Math.floor(Math.random() * sounds.length)];
+  } while (choice === lastSound && sounds.length > 1);
+  lastSound = choice;
+  return choice;
+}
+
+btn.addEventListener("click", () => {
+  if (!audio.paused) return;
+  audio.src = getRandomSound();
+  btnImg.src = PRESSED_SRC;
+  audio.currentTime = 0;
+  audio.play();
+});
+
+audio.addEventListener("ended", () => {
+  btnImg.src = IDLE_SRC;
+});
