@@ -1,2 +1,2 @@
 # mercury
-Personal webpage :)
+Indie web page
