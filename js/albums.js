@@ -622,11 +622,11 @@ function renderTopAlbums() {
 
   container.innerHTML = "";
 
-  const randomAlbums = [...albums].sort(() => Math.random() - 0.5).slice(0, 3);
+  const onRepeatAlbum = albums.find((album) => album.artist === "Loathe" && album.title === "A Stranger To You");
 
-  randomAlbums.forEach((album) => {
-    container.appendChild(buildAlbumCard(album));
-  });
+  if (onRepeatAlbum) {
+    container.appendChild(buildAlbumCard(onRepeatAlbum));
+  }
 }
 
 function getFilterLetter(artist) {
