@@ -58,6 +58,11 @@ const banners = [
     img: "https://tertiaryapocalypse.neocities.org/button/tertiaryapocalypse.png",
     alt: "tertiaryapocalypse",
   },
+  {
+    url: "https://404city.neocities.org/",
+    img: "https://404city.neocities.org/btn.gif",
+    alt: "404city",
+  },
 ];
 
 // Set true if you want the badge order shuffled on every page load.
