@@ -1,5 +1,5 @@
 :root {
-  --bubble-background: #a39c92;
+  --bubble-background: #c4c3c2;
 
   /* win95 bevel colors, reused across .come-play, .bubble, .mood, .banner-container */
   --win95-highlight: #ffffff;
@@ -160,7 +160,7 @@ ol {
   height: 100%;
   z-index: -10;
   background-color: #272626;
-  background-image: url("../img/bg2\(1\).jpg");
+  background-image: url("/img/tile1.gif");
   background-repeat: repeat;
 }
 
