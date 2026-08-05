@@ -262,7 +262,7 @@ ol {
 .random-facts span {
     display: inline-block;
     white-space: nowrap;
-    animation: pan-text 10s linear infinite;
+    animation: pan-text 20s linear infinite;
     font-family: var(--font-pixel);
     font-size: 10px;
 }

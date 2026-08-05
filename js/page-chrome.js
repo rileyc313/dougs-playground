@@ -1,10 +1,6 @@
 // ---- Site-wide page chrome ----
 // Two small always-on behaviors: capping every <audio> element's volume,
 // and fading out the loading overlay once the page is fully loaded.
-//
-// WHERE THIS GOES: every page. Both parts are safe with zero matching
-// elements (querySelectorAll just finds nothing; the overlay code
-// no-ops if #loading-overlay isn't there).
 
 document.querySelectorAll("audio").forEach(function (audio) {
   audio.volume = 0.2;

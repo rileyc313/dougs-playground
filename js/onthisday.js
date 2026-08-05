@@ -82,4 +82,4 @@ async function loadOnThisDayEvents() {
 }
 
 loadOnThisDayEvents();
-setInterval(showOnThisDayEvent, 10000);
+setInterval(showOnThisDayEvent, 20000);
