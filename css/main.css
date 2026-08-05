@@ -16,7 +16,7 @@
   --dialog-accent: white;
   --titlebar-color: white;
   --player-image: url(https://loveberry.nekoweb.org/assets/images/mp/yuzuha.png);
-  --surface: #c0c0c0;
+  --surface: rgb(165, 160, 173);
   --button-highlight: #ffffff;
   --button-face: #dfdfdf;
   --button-shadow: #808080;
@@ -432,7 +432,7 @@ ol {
   white-space: nowrap;
   user-select: none;
 
-  background: #c0c0c0;
+  background: var(--button-face);
 
   border-top: 2px solid #fff;
   border-left: 2px solid #fff;
@@ -444,11 +444,13 @@ ol {
     inset 1px 1px 0 #dfdfdf;
 }
 
-.upload-btn:hover {
+.upload-btn:hover,
+.window-button:hover {
   transform: translateY(-1px);
 }
 
-.upload-btn:active {
+.upload-btn:active,
+.window-button:active {
   transform: translateY(1px);
 }
 
@@ -902,7 +904,7 @@ body {
 }
 
 .window-button {
-  background: var(--surface);
+  background: var(--button-face);
   border: none;
   border-radius: 0;
   box-shadow:
