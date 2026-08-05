@@ -4,8 +4,6 @@
 // https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}
 // No API key needed, CORS-enabled, safe to call straight from the browser.
 //
-// Caches the day's events in localStorage (keyed by date) so repeat visits
-// / page navigations on the same day don't re-hit the API every time.
 
 let onThisDayEvents = [];
 let onThisDayIndex = 0;

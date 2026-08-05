@@ -140,9 +140,17 @@ ol {
     position: relative;
     width: 225px;
     z-index: 1;
-    background-color: #F4F3EF;
+    background-color: var(--bubble-background);
+    border-top: 2px solid var(--win95-highlight);
+    border-left: 2px solid var(--win95-highlight);
+    border-right: 2px solid var(--win95-shadow);
+    border-bottom: 2px solid var(--win95-shadow);
     padding: 20px;
     box-shadow: 10px 5px 5px rgb(0, 0, 0, 30%);
+}
+
+.container-right:empty {
+    visibility: hidden;
 }
 
 .backdrop {
@@ -524,7 +532,11 @@ ol {
     }
 
     .d-banner-container {
-        order 2
+        order: 2;
+    }
+
+    .bubble:has(#site-map-widget) {
+        order: 0;
     }
 
     .container-left > .bubble:nth-of-type(2) {
@@ -919,7 +931,7 @@ body {
     display: block;
     min-width: 16px;
     min-height: 14px;
-}: 5px 10px;
+    padding: 5px 10px;
 }
 .player-buttons .window-button svg {
    width: 15px;
@@ -993,4 +1005,75 @@ body {
 
 .surpressor {
     color: #3c92ca;
+}
+
+/* ==================================================
+   Site Map Widget (right rail)
+   ================================================== */
+
+.sitemap-tree {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sitemap-tree .sitemap-tree {
+    margin-left: 12px;
+    padding-left: 8px;
+    border-left: 1px dashed var(--win95-shadow);
+}
+
+.sitemap-tree li {
+    margin: 2px 0;
+}
+
+.sitemap-folder {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+}
+
+.sitemap-folder > summary {
+    cursor: url('../misc/carmageddon/2.cur'), pointer;
+    list-style: none;
+    padding: 2px 4px;
+}
+
+.sitemap-folder > summary::-webkit-details-marker {
+    display: none;
+}
+
+.sitemap-folder > summary::before {
+    content: "▸ ";
+    color: var(--win95-inset-shadow);
+}
+
+.sitemap-folder[open] > summary::before {
+    content: "▾ ";
+}
+
+.sitemap-folder > summary a {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+.sitemap-page {
+    display: block;
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: #000;
+    text-decoration: none;
+    padding: 2px 4px 2px 14px;
+}
+
+.sitemap-page:hover,
+.sitemap-folder > summary a:hover {
+    text-decoration: underline;
+}
+
+.sitemap-current {
+    background: var(--win95-inset-shadow);
+    color: #fff !important;
+    padding: 1px 3px;
 }

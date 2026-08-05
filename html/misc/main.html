@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doug's Playground</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/mercury.gif">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        body {
+            margin: 0px;
+            cursor: url('../../misc/carmageddon/1.cur'), auto;
+        }
+
+        a,
+        label,
+        button,
+        label.upload-btn,
+        .mercury-header-gif,
+        .musical-notes {
+            cursor: url('../../misc/carmageddon/2.cur'), auto;
+        }
+
+        iframe {
+            cursor: url('../../misc/carmageddon/1.cur'), auto;
+        }
+
+        #loading-overlay {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+            height: 100vh;
+
+            background: black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 999999999;
+
+            transition: opacity .4s;
+        }
+
+        #loading-overlay.loaded {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loading-bar {
+            width: 250px;
+            height: 18px;
+
+            background: #d0d0d0;
+
+            border: 2px inset #808080;
+
+            overflow: hidden;
+        }
+
+        .loading-bar-fill {
+            width: 0%;
+            height: 100%;
+
+            background: #a50d02;
+        }
+    </style>
+    <script src="/js/banners.js" defer></script>
+<script src="/js/page-chrome.js" defer></script>
+    <script src="/js/sitemap.js" defer></script>    <script src="/js/red-button.js" defer></script>
+    <script src="/js/sitemap.js" defer></script>
+    <script>
+
+        document.body.classList.add("loading");
+
+        function hideOverlay() {
+            document.body.classList.remove("loading");
+
+            overlay.classList.add("loaded");
+            setTimeout(() => overlay.remove(), 400);
+        }
+    </script>
+</head>
+
+<body>
+    <img class="backdrop">
+    <div class="splash-image-container">
+        <a href="/home.html"><img class="splash-image" src="/img/dougsplaygroundsplash.gif"></a>
+    </div>
+    
+    <section class="main-body">
+        <div class="container-left">
+            <div class="bubble">
+                <div id="site-map-widget"></div>
+            </div>
+        </div>
+        <div class="container-main flex-column" style="justify-content: center;">
+            <div class="bubble" style="padding-bottom: 50px;">
+                <div class="flex" style="vertical-align: middle;">
+                        <p style="font-weight: 900;">Misc. pages</p> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="/home.html">
+                            <p>back</p>
+                        </a>
+                        </span></p>
+                    </div>
+                    <p>Press the button... you know you want toooooo</p>
+                <div id="myButton" class="audio-btn">
+                <img id="btnImg" src="/img/redbutton1.png" alt="Play button">
+                </div>
+                <audio id="btnAudio" src=""></audio>
+            </div>
+            <div class="d-banner-container">
+                <a class="d-banner-container" href="/html/misc/firepit/firepit.html">
+                    <div class="bubble">
+                        <img class="d-banner" src="/img/firepitfullbanner.gif">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="container-right"></div>
+    </section>
+    <section class="footer-container">
+        <div class="banner-container">
+            <div class="banner-track" id="bannerTrack"></div>
+        </div>
+        <div class="bubble-no-border">
+            <p>Est. June, 2026 | Human Made.</p>
+        </div>
+    </section>
+</body>
+</html>

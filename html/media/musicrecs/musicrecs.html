@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doug's Playground</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/mercury.gif">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <style>
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        @media (max-width: 700px) {
+            .albums-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .alphabet-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            padding: 12px;
+            margin-bottom: 20px;
+        }
+
+        .letter-btn {
+            min-width: 28px;
+            height: 28px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .letter-btn.active {
+            background: #000;
+            color: #fff;
+            border-style: inset;
+        }
+
+        .no-results {
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            padding: 20px 0;
+        }
+    </style>
+
+    <!-- Tells main.js how many folders deep this page sits,
+             so shared asset paths (album covers, audio tracks, etc.) resolve correctly.
+             Must be set BEFORE main.js loads. -->
+    <script>window.SITE_ROOT = "../../";</script>
+    <script src="/js/banners.js" defer></script>
+<script src="/js/page-chrome.js" defer></script>
+    <script src="/js/sitemap.js" defer></script>    <script src="/js/albums.js" defer></script>
+</head>
+
+<body>
+    <img class="backdrop">
+    <div class="splash-image-container">
+        <a href="/home.html"><img class="splash-image" src="/img/dougsplaygroundsplash.gif"></a>
+    </div>
+    <section class="main-body">
+           <div class="container-left">
+            <div class="bubble">
+                <div id="site-map-widget"></div>
+            </div>
+        </div>
+        <div class="bubble">
+        <div class="container-main flex-column">                <div style="display: flex;">
+                    <p style="font-weight: 900;">Music Recommendations</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="/html/media/main.html">
+                        <p>back</p>
+                    </a>
+                    </span></p>
+                </div>
+                <p style="padding-bottom: 15px;">These are some of my favourites. Feel free to give the best ones a
+                    listen.
+                </p>
+                <div id="alphabet-filter" class="alphabet-filter"></div>
+                <div id="all-albums-grid" class="albums-grid"></div>
+            </div>
+        </div>
+        <div class="container-right"></div>
+    </section>
+    <section class="footer-container">
+        <div class="banner-container">
+            <div class="banner-track" id="bannerTrack"></div>
+        </div>
+        <div class="bubble-no-border">
+            <p>Est. June, 2026 | Human Made.</p>
+        </div>
+    </section>
+</body>
+
+</html>

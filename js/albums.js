@@ -9,7 +9,7 @@
 // page (for the full grid + filter). No other page needs it.
 
 const ROOT =
-  typeof window !== "undefined" && window.SITE_ROOT ? window.SITE_ROOT : "../";
+  typeof window !== "undefined" && window.SITE_ROOT ? window.SITE_ROOT : "";
 
 const allTrackPlayers = [];
 

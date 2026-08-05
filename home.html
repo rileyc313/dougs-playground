@@ -10,10 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
-    <link rel="icon" href="../img/mercury.gif">
+    <link rel="icon" href="/img/mercury.gif">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <style>
         body {
             margin: 0px;
@@ -82,12 +82,13 @@
             background: #a50d02;
         }
     </style>
-    <script src="../js/albums.js" defer></script>
-    <script src="../js/page-chrome.js" defer></script>
-    <script src="../js/banners.js" defer></script>
-    <script src="../js/onthisday.js" defer></script>
-    <script src="../js/pixel-upload.js" defer></script>
-    <script src="../js/sidebar-widgets.js" defer></script>
+    <script src="/js/albums.js" defer></script>
+    <script src="/js/page-chrome.js" defer></script>
+    <script src="/js/banners.js" defer></script>
+    <script src="/js/onthisday.js" defer></script>
+    <script src="/js/pixel-upload.js" defer></script>
+    <script src="/js/sidebar-widgets.js" defer></script>
+    <script src="/js/sitemap.js" defer></script>
     <script>
 
         document.body.classList.add("loading");
@@ -106,7 +107,7 @@
 
         <div class="loading-box">
 
-            <img class="loading-image" src="./img/albums/WelcomeMessage-3407311949.png">
+            <img class="loading-image" src="/img/albums/WelcomeMessage-3407311949.png">
 
             <div class="loading-bar">
                 <div class="loading-bar-fill"></div>
@@ -116,79 +117,53 @@
     </div>
     <img class="backdrop">
     <div class="splash-image-container">
-        <a href="../index2.html"><img class="splash-image" src="../img/dougsplaygroundsplash.gif"></a>
+        <a href="/index2.html"><img class="splash-image" src="/img/dougsplaygroundsplash.gif"></a>
     </div>
     <section class="main-body">
         <div class="container-left">
             <div class="buttons">
                 <a href="https://www.change.org/p/petition-sony-to-develop-destiny-3" target="_blank"><img
-                        src="../img/d3now.png" /></a>
-                <img src="../img/made_with_windows.gif" />
-                <a href="https://store.steampowered.com/" target="_blank"><img src="../img/steam.gif" /></a>
+                        src="/img/d3now.png" /></a>
+                <img src="/img/made_with_windows.gif" />
+                <a href="https://store.steampowered.com/" target="_blank"><img src="/img/steam.gif" /></a>
                 <a><img src="https://88x31.nl/gifs/powered-by-debian.gif" /></a>
                 <a><img src="https://dietcokeorchoke.neocities.org/graphics/fudan/cokestill.png" /></a>
                 <a><img src="https://petrapixel.neocities.org/assets/img/blinkies/buttons/responsivesite.jpg" /></a>
             </div>
-            <div class="mobile-icons">
-                <div class="mood">
-                    <p><strong>Mood</strong>: <span style="display: flex; align-items: center;">Nostalgic<img
-                                class="emoticon"
-                                src="https://emoticons.neocities.org/emo/steam/base/steam-happy4S.gif"></span></p>
-                </div>
+            <div class="bubble">
+                <div id="site-map-widget"></div>
             </div>
             <div class="mobile-icons">
                 <div class="bubble">
-                    <a href="./html/chatroom/chatroom.html">
-                        <img class="message-alert" src="./img/messages/messagealert.gif">
+                    <a href="/html/about/about.html">
+                        <img class="message-alert" src="/img/about.gif">
                     </a>
                 </div>
                 <div class="bubble">
-                    <a href="./html/gallery/gallery.html">
-                        <img class="message-alert" src="./img/gallery/camerasprite.gif">
+                    <a href="/html/media/main.html">
+                        <img class="message-alert" src="/img/media.gif">
                     </a>
                 </div>
             </div>
             <div class="mobile-icons">
                 <div class="bubble">
-                    <a href="./html/destiny/main.html">
-                        <img class="message-alert" src="./img/destiny/destinytricorn.gif">
+                    <a href="/html/gaming/main.html">
+                        <img class="message-alert" src="/img/gaming.gif">
                     </a>
                 </div>
                 <div class="bubble">
-                    <a href="./html/osrs/main.html">
-                        <img class="message-alert" src="./img/rsbanner.gif">
-                    </a>
-                </div>
-            </div>
-            <div class="mobile-icons">
-                <div class="bubble">
-                    <a href="./html/about/about.html">
-                        <img class="message-alert" src="./img/about.gif">
-                    </a>
-                </div>
-                <div class="bubble">
-                    <a href="./html/musicrecs/musicrecs.html">
-                        <img class="message-alert" src="./img/musicrecsbanner.gif">
-                    </a>
-                </div>
-            </div>
-            <div class="mobile-icons">
-                <div class="invisible-bubble">
-                </div>
-                <div class="bubble">
-                    <a href="./html/randomsounds/randomsounds.html">
-                        <img class="message-alert" src="./img/buttonbanner.gif">
+                    <a href="/html/misc/main.html">
+                        <img class="message-alert" src="/img/buttonbanner.gif">
                     </a>
                 </div>
             </div>
         </div>
-        <div class="container-main flex-column">
-            <div class="header bubble">
-                <audio id="mercurySound" src="./audio/bark-fart-sound.mp3" preload="auto"></audio>
-                <audio id="pianoSound1" src="./audio/notec_yhGsG75.mp3" preload="auto"></audio>
-                <audio id="pianoSound2" src="./audio/39191__jobro__piano-ff-044.mp3" preload="auto"></audio>
-                <audio id="pianoSound3" src="./audio/39189__jobro__piano-ff-042.mp3" preload="auto"></audio>
-                <img class="mercury-header-gif" id="mercuryGif" src="../img/mercury.gif">
+        <div class="container-main flex-column">            <div class="header bubble">
+                <audio id="mercurySound" src="/audio/bark-fart-sound.mp3" preload="auto"></audio>
+                <audio id="pianoSound1" src="/audio/notec_yhGsG75.mp3" preload="auto"></audio>
+                <audio id="pianoSound2" src="/audio/39191__jobro__piano-ff-044.mp3" preload="auto"></audio>
+                <audio id="pianoSound3" src="/audio/39189__jobro__piano-ff-042.mp3" preload="auto"></audio>
+                <img class="mercury-header-gif" id="mercuryGif" src="/img/mercury.gif">
                 <h1 class="header-title">On this day in...</h1>
                 <div class="random-facts">
                     <span id="fact"></span>
@@ -198,12 +173,13 @@
                 <p style="font-weight: 900;">Message Board:</p>
                 <p>08/05/2026</p>
                 <p><a href="https://www.youtube.com/watch?v=jOaJvDU-Aw8&list=RDjOaJvDU-Aw8&start_radio=1">https://www.youtube.com/watch?v=jOaJvDU-Aw8&list=RDjOaJvDU-Aw8&start_radio=1</a></p>
+                <p>Oh also new sitemap added (left hand side, + new icons and banners)</p>
 
                 <div style="display: flex; justify-content: space-between">
                     <p>- <span class="red-strike-through">Riley</span> Doug
                     <p style="display:flex;">
                         <a href="https://dougsplayground.neocities.org" target="_blank"><img
-                                src="./img/dougsplaygroundbutton.png" /></a><textarea
+                                src="/img/dougsplaygroundbutton.png" /></a><textarea
                             style="resize: none;"><a href="https://dougsplayground.net" target="_blank"><img src="https://dougsplayground.net/img/dougsplaygroundbutton.png"/></a></textarea>
                         </span>
                     </p>
@@ -223,14 +199,16 @@
             <div class="bubble firepitcontainer"
                 style="align-items: center; justify-content: center; display: flex; flex-direction: column;">
                 <p style="font-weight: 900;">Need a break?</p>
-                <a href="./html/firepit/firepit.html" style="text-decoration: none; color: #000"><label
+                <a href="/html/misc/firepit/firepit.html" style="text-decoration: none; color: #000"><label
                         class="upload-btn">Gather round'</label></a>
             </div>
         </div>
-        <div class="container-right bubble">
-            <img id="musicalNotesGif" class="musical-notes" src="../img/musical-notes.gif">
+        <div class="container-right">
+            <img id="musicalNotesGif" class="musical-notes" src="/img/musical-notes.gif">
             <p style="font-weight: 900;">On REPEAT!</p>
             <div id="top-3-albums"></div>
+                        <div class="mobile-icons">
+            </div>
         </div>
     </section>
     <section class="footer-container">
