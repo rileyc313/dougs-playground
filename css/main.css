@@ -9,6 +9,7 @@
 
   /* pixel font, reused across most text elements */
   --font-pixel: "Dogica";
+  --sitemap-selected: #2d2a31;
 
   /* musicplayer window theme */
   --titlebar-gradient: linear-gradient(90deg, #6a1535, #b23965, #f9a5b9);
@@ -1050,10 +1051,6 @@ body {
   color: #3c92ca;
 }
 
-/* ==================================================
-   Site Map Widget (right rail)
-   ================================================== */
-
 .sitemap-tree {
   list-style: none;
   margin: 0;
@@ -1116,7 +1113,7 @@ body {
 }
 
 .sitemap-current {
-  background: var(--win95-inset-shadow);
+  background: var(--sitemap-selected);
   color: #fff !important;
   padding: 1px 3px;
 }
