@@ -13,7 +13,7 @@ const siteMap = [
     children: [
       {
         name: "Main",
-        path: "/html/gaming/main.html"
+        path: "/html/gaming/main.html",
       },
       {
         name: "Destiny",
@@ -63,13 +63,11 @@ const siteMap = [
                 name: "LW",
                 path: "/html/gaming/destiny/raids/lw.html",
               },
-              
             ],
           },
           {
             name: "Wishwall",
             path: "/html/gaming/destiny/wishwall/wishwall.html",
-            
           },
         ],
       },
@@ -86,7 +84,7 @@ const siteMap = [
     children: [
       {
         name: "Main",
-        path: "/html/media/main.html"
+        path: "/html/media/main.html",
       },
       {
         name: "Gallery",
@@ -101,10 +99,10 @@ const siteMap = [
 
   {
     name: "Misc",
-    children: [      
+    children: [
       {
         name: "Main",
-        path: "/html/misc/main.html"
+        path: "/html/misc/main.html",
       },
       {
         name: "Firepit",

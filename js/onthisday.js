@@ -58,7 +58,8 @@ async function loadOnThisDayEvents() {
       `https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${month}/${day}`,
     );
 
-    if (!response.ok) throw new Error(`Wikipedia API returned ${response.status}`);
+    if (!response.ok)
+      throw new Error(`Wikipedia API returned ${response.status}`);
 
     const data = await response.json();
 

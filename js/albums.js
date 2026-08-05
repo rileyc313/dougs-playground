@@ -622,7 +622,9 @@ function renderTopAlbums() {
 
   container.innerHTML = "";
 
-  const onRepeatAlbum = albums.find((album) => album.artist === "Loathe" && album.title === "A Stranger To You");
+  const onRepeatAlbum = albums.find(
+    (album) => album.artist === "Loathe" && album.title === "A Stranger To You",
+  );
 
   if (onRepeatAlbum) {
     container.appendChild(buildAlbumCard(onRepeatAlbum));
