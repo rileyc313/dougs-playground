@@ -513,7 +513,7 @@ function createTrackPlayer(container, tracks) {
     clearInterval(updateTimer);
     resetValues();
 
-    audio.src = ROOT + tracks[index].path;
+    audio.src = "/" + tracks[index].path;
     audio.load();
 
     updateTimer = setInterval(seekUpdate, 1000);
@@ -601,7 +601,7 @@ function buildAlbumCard(album) {
   const albumEl = document.createElement("div");
   albumEl.className = "album";
   albumEl.innerHTML = `
-    <img class="album-cover" src="${ROOT}${album.cover}">
+    <img class="album-cover" src="/${album.cover}">
     <p>Artist: <span style="color:${album.color}">${album.artist}</span></p>
     <p>Title: <span style="color:${album.color}">${album.title}</span></p>
     <p>Runtime: <span style="color:${album.color}">${album.runtime}</span></p>
