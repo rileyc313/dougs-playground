@@ -10,12 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
-    <link rel="icon" href="/img/favicon.png"> <!-- CSS -->
+    <link rel="icon" href="/img/favicon.png">
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/main.css">
     <style>
         body {
             margin: 0px;
-            cursor: url('../../misc/carmageddon/1.cur'), auto;
+            cursor: url('/misc/carmageddon/1.cur'), auto;
         }
 
         a,
@@ -23,12 +24,13 @@
         button,
         label.upload-btn,
         .mercury-header-gif,
-        .musical-notes {
-            cursor: url('../../misc/carmageddon/2.cur'), auto;
+        .musical-notes,
+        input, {
+            cursor: url('/misc/carmageddon/2.cur'), auto;
         }
 
         iframe {
-            cursor: url('../../misc/carmageddon/1.cur'), auto;
+            cursor: url('/misc/carmageddon/1.cur'), auto;
         }
 
         #loading-overlay {
@@ -80,67 +82,55 @@
             background: #a50d02;
         }
     </style>
-    <script src="/js/banners.js" defer></script>
+    <script src="/js/albums.js" defer></script>
     <script src="/js/page-chrome.js" defer></script>
+    <script src="/js/banners.js" defer></script>
+    <script src="/js/onthisday.js" defer></script>
+    <script src="/js/pixel-upload.js" defer></script>
+    <script src="/js/sidebar-widgets.js" defer></script>
     <script src="/js/sitemap.js" defer></script>
-    <script src="/js/red-button.js" defer></script>
-    <script src="/js/sitemap.js" defer></script>
-    <script>
-
-        document.body.classList.add("loading");
-
-        function hideOverlay() {
-            document.body.classList.remove("loading");
-
-            overlay.classList.add("loaded");
-            setTimeout(() => overlay.remove(), 400);
-        }
-    </script>
+    <script src="/js/text-comparer.js" defer></script> 
 </head>
 
 <body>
-    <img class="backdrop">
+   <img class="backdrop">
     <div class="splash-image-container">
         <a href="/home.html"><img class="splash-image" src="/img/dougsplaygroundsplash.gif"></a>
     </div>
-
     <section class="main-body">
         <div class="container-left">
             <div class="bubble">
                 <div id="site-map-widget"></div>
             </div>
         </div>
-        <div class="container-main flex-column" style="justify-content: center;">
-            <div class="bubble" style="padding-bottom: 50px;">
-                <div class="flex" style="vertical-align: middle;">
-                    <p style="font-weight: 900;">Misc. pages</p> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/home.html">
-                        <p>back</p>
-                    </a>
-                    </span></p>
-                </div>
-                <p>Press the button... you know you want toooooo</p>
-                <div id="myButton" class="audio-btn">
-                    <img id="btnImg" src="/img/redbutton1.png" alt="Play button">
-                </div>
-                <audio id="btnAudio" src=""></audio>
+        <div class="container-main flex-column">
+        <div class="bubble">
+          <div class="flex" style="vertical-align: middle;">
+            <p style="font-weight: 900;">Misc. pages</p> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="/html/misc/main.html">
+                <p>back</p>
+              </a>
+            </p>
+          </div>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fm%2Ftm4JV1Qs15AAAAAC%2Fthe-interview-james-franco.gif&f=1&nofb=1&ipt=3f97eaeba0005511fc973c77711db1e5936d08cbfc0ca59f61dae2b432cce5e7" class="d-banner">
+          <p>The two boxes below serve as a comparison app for 2 sentences. Enter them seperately into each, and the output below the inputs will highlight the differences in <mark>yellow</mark>.</p>
+          <div style="display: flex; flex-direction: column;">
+            <div class="flex " style="flex-direction: row; gap:20px; width: 100%">
+              <div style="display: flex; flex: 1; flex-direction: column;">
+                <p style="font-size: 8px;">Input 1</p>
+                <input style="flex: 1" type="input" id="textCompare1" name="Text 1" value="">
+              </div>
+              <div style="display: flex; flex: 1; flex-direction: column;">
+                <p style="font-size: 8px;">Input 2</p>
+                <input style="flex: 1" type="input" id="textCompare2" name="Text 2" value="">
+              </div>
             </div>
-            <div class="d-banner-container">
-                <a class="d-banner-container" href="/html/misc/firepit/firepit.html">
-                    <div class="bubble">
-                        <img class="d-banner" src="/img/firepitfullbanner.gif">
-                    </div>
-                </a>
-            </div>
-            <div class="d-banner-container">
-                <a class="d-banner-container" href="/html/misc/text-comparer/text-comparer.html">
-                    <div class="bubble">
-                        <img class="d-banner" src="/img/comparebanner.gif">
-                    </div>
-                </a>
-            </div>  
-      </div>
-        <div class="container-right"></div>
+            <p style="font-size: 8px; margin-top: 20px;">Output:</p>
+          <div id="differenceOutput" style="display: flex; flex-direction: row; gap: 20px;"></div>
+        </div>
+        </div>
+        </div>
+    <div class="container-right"></div>
     </section>
     <section class="footer-container">
         <div class="banner-container">

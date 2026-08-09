@@ -108,6 +108,10 @@ const siteMap = [
         name: "Firepit",
         path: "/html/misc/firepit/firepit.html",
       },
+      {
+        name: "Text Comparer",
+        path: "/html/misc/text-comparer/text-comparer.html"
+      },
     ],
   },
 ];

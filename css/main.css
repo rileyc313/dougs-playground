@@ -28,6 +28,22 @@
     inset -2px -2px var(--button-face), inset 2px 2px var(--window-frame);
 }
 
+input,
+#differenceOutput {
+  background-color: ;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  padding: 10px 5px;
+  border-top: 2px solid var(--win95-highlight);
+  border-left: 2px solid var(--win95-highlight);
+  border-right: 2px solid var(--win95-shadow);
+  border-bottom: 2px solid var(--win95-shadow); 
+}
+
+#differenceOutput {
+  background-color: #fff;
+}
+
 body {
   margin: 0px;
   cursor: url("../misc/carmageddon/1.cur"), auto;
@@ -495,7 +511,7 @@ ol {
   body {
     overflow-x: hidden;
   }
-
+  
   .main-body {
     display: flex;
     flex-direction: column;
@@ -677,6 +693,8 @@ ol {
     margin: -40px auto 10px auto;
     rotate: 0deg;
   }
+
+
 }
 
 body {
