@@ -3,78 +3,82 @@
 // Right-rail sitemap widget. Add new pages/sections to siteMap below and every
 // page that includes this script updates automatically, no manual nav editing.
 
+// Paths are written without the ".html" extension: Neocities serves clean
+// URLs (a page saved as /foo/bar.html loads at /foo/bar, and normalizes
+// window.location.pathname to that extensionless form), so links here match
+// what actually ends up in the address bar.
 const siteMap = [
-  { name: "Home", path: "/home.html" },
+  { name: "Home", path: "/home" },
 
-  { name: "About", path: "/html/about/about.html" },
+  { name: "About", path: "/html/about/about" },
 
   {
     name: "Gaming",
     children: [
       {
         name: "Main",
-        path: "/html/gaming/main.html",
+        path: "/html/gaming/main",
       },
       {
         name: "Destiny",
-        path: "/html/gaming/destiny/main.html",
+        path: "/html/gaming/destiny/main",
         children: [
           {
             name: "Callouts",
-            path: "/html/gaming/destiny/callouts/main.html",
+            path: "/html/gaming/destiny/callouts/main",
             children: [
               {
                 name: "Darkness",
-                path: "/html/gaming/destiny/callouts/darkness-callouts.html",
+                path: "/html/gaming/destiny/callouts/darkness-callouts",
               },
               {
                 name: "Awoken",
-                path: "/html/gaming/destiny/callouts/awoken-callouts.html",
+                path: "/html/gaming/destiny/callouts/awoken-callouts",
               },
             ],
           },
           {
             name: "Raids",
-            path: "/html/gaming/destiny/raids/main.html",
+            path: "/html/gaming/destiny/raids/main",
             children: [
               {
                 name: "Pantheon",
-                path: "/html/gaming/destiny/raids/pantheon/main.html",
+                path: "/html/gaming/destiny/raids/pantheon/main",
                 children: [
                   {
                     name: "CR",
-                    path: "/html/gaming/destiny/raids/pantheon/calusresplendant.html",
+                    path: "/html/gaming/destiny/raids/pantheon/calusresplendant",
                   },
                 ],
               },
               {
                 name: "DSC",
-                path: "/html/gaming/destiny/raids/dsc.html",
+                path: "/html/gaming/destiny/raids/dsc",
               },
               {
                 name: "VOG",
-                path: "/html/gaming/destiny/raids/vog.html",
+                path: "/html/gaming/destiny/raids/vog",
               },
               {
                 name: "VOTD",
-                path: "/html/gaming/destiny/raids/votd.html",
+                path: "/html/gaming/destiny/raids/votd",
               },
               {
                 name: "LW",
-                path: "/html/gaming/destiny/raids/lw.html",
+                path: "/html/gaming/destiny/raids/lw",
               },
             ],
           },
           {
             name: "Wishwall",
-            path: "/html/gaming/destiny/wishwall/wishwall.html",
+            path: "/html/gaming/destiny/wishwall/wishwall",
           },
         ],
       },
 
       {
         name: "OSRS",
-        path: "/html/gaming/osrs/main.html",
+        path: "/html/gaming/osrs/main",
       },
     ],
   },
@@ -84,15 +88,15 @@ const siteMap = [
     children: [
       {
         name: "Main",
-        path: "/html/media/main.html",
+        path: "/html/media/main",
       },
       {
         name: "Gallery",
-        path: "/html/media/gallery/gallery.html",
+        path: "/html/media/gallery/gallery",
       },
       {
         name: "Music",
-        path: "/html/media/musicrecs/musicrecs.html",
+        path: "/html/media/musicrecs/musicrecs",
       },
     ],
   },
@@ -102,22 +106,34 @@ const siteMap = [
     children: [
       {
         name: "Main",
-        path: "/html/misc/main.html",
+        path: "/html/misc/main",
       },
       {
         name: "Firepit",
-        path: "/html/misc/firepit/firepit.html",
+        path: "/html/misc/firepit/firepit",
       },
       {
         name: "Text Comparer",
-        path: "/html/misc/text-comparer/text-comparer.html"
+        path: "/html/misc/text-comparer/text-comparer"
       },
     ],
   },
 ];
 
+// Neocities serves "clean URLs": a page saved as /foo/bar.html is reachable
+// (and normalizes window.location.pathname) as /foo/bar, with no extension.
+// Compare paths with any trailing ".html" stripped so highlighting still
+// matches whether or not the browser's URL has the extension.
+function normalizePath(path) {
+  return path.replace(/\.html$/i, "");
+}
+
+function pathMatches(currentPath, nodePath) {
+  return normalizePath(currentPath).endsWith(normalizePath(nodePath));
+}
+
 function nodeContainsCurrentPage(node, currentPath) {
-  if (node.path && currentPath.endsWith(node.path)) return true;
+  if (node.path && pathMatches(currentPath, node.path)) return true;
   if (!node.children) return false;
   return node.children.some((child) =>
     nodeContainsCurrentPage(child, currentPath),
@@ -125,7 +141,7 @@ function nodeContainsCurrentPage(node, currentPath) {
 }
 
 function buildSitemapNode(node, currentPath) {
-  const isCurrent = node.path && currentPath.endsWith(node.path);
+  const isCurrent = node.path && pathMatches(currentPath, node.path);
 
   if (node.children && node.children.length) {
     const details = document.createElement("details");
