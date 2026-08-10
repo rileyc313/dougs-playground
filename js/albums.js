@@ -37,7 +37,7 @@ const albums = [
       {
         name: "All Under Heaven",
         artist: "Receiving Certain Answers",
-        path: "audio/toptracks/All Under Heaven - Receiving Certain Answers.mp3",
+        path: "audio/toptracks/All_Under_Heaven_-_Receiving_Certain_Answers.mp3",
       },
     ],
   },
@@ -53,7 +53,7 @@ const albums = [
       {
         name: "Microwave",
         artist: "Whimper",
-        path: "audio/toptracks/Microwave - Whimper.mp3",
+        path: "audio/toptracks/Microwave_-_Whimper.mp3",
       },
     ],
   },
@@ -69,7 +69,7 @@ const albums = [
       {
         name: "HUM",
         artist: "The Pod",
-        path: "audio/toptracks/HUM - The Pod.mp3",
+        path: "audio/toptracks/HUM_-_The_Pod.mp3",
       },
     ],
   },
@@ -85,7 +85,7 @@ const albums = [
       {
         name: "Title Fight",
         artist: "27",
-        path: "audio/toptracks/Title Fight - 27.mp3",
+        path: "audio/toptracks/Title_Fight_-_27.mp3",
       },
     ],
   },
@@ -101,7 +101,7 @@ const albums = [
       {
         name: "Title Fight",
         artist: "Make You Cry",
-        path: "audio/toptracks/Title Fight - Make You Cry.mp3",
+        path: "audio/toptracks/Title_Fight_-_Make_You_Cry.mp3",
       },
     ],
   },
@@ -117,7 +117,7 @@ const albums = [
       {
         name: "HUM",
         artist: "The Summoning",
-        path: "audio/toptracks/HUM - The Summoning.mp3",
+        path: "audio/toptracks/HUM_-_The_Summoning.mp3",
       },
     ],
   },
@@ -133,7 +133,7 @@ const albums = [
       {
         name: "Fiddlehead",
         artist: "Heart To Heart",
-        path: "audio/toptracks/Fiddlehead - Heart To Heart.mp3",
+        path: "audio/toptracks/Fiddlehead_-_Heart_to_Heart.mp3",
       },
     ],
   },
@@ -149,7 +149,7 @@ const albums = [
       {
         name: "Superheaven",
         artist: "Long Gone",
-        path: "audio/toptracks/Superheaven - Long Gone.mp3",
+        path: "audio/toptracks/Superheaven_-_Long_Gone.mp3",
       },
     ],
   },
@@ -165,7 +165,7 @@ const albums = [
       {
         name: "Superheaven",
         artist: "Around The Railing",
-        path: "audio/toptracks/Superheaven - Around The Railing.mp3",
+        path: "audio/toptracks/Superheaven_-_Around_The_Railing.mp3",
       },
     ],
   },
@@ -181,7 +181,7 @@ const albums = [
       {
         name: "Microwave",
         artist: "Something Right",
-        path: "audio/toptracks/Microwave - Something Right.mp3",
+        path: "audio/toptracks/Microwave_-_Something_Right.mp3",
       },
     ],
   },
@@ -197,7 +197,7 @@ const albums = [
       {
         name: "Basement",
         artist: "For You The Moon",
-        path: "audio/toptracks/Basement - For You The Moon.mp3",
+        path: "audio/toptracks/Basement_-_For_You_the_Moon.mp3",
       },
     ],
   },
@@ -213,7 +213,7 @@ const albums = [
       {
         name: "Basement",
         artist: "Nothing Left",
-        path: "audio/toptracks/Basement - Nothing Left.mp3",
+        path: "audio/toptracks/Basement_-_Nothing_Left.mp3",
       },
     ],
   },
@@ -229,7 +229,7 @@ const albums = [
       {
         name: "Basement",
         artist: "Comfort",
-        path: "audio/toptracks/Basement - Comfort.mp3",
+        path: "audio/toptracks/Basement_-_Comfort.mp3",
       },
     ],
   },
@@ -245,7 +245,7 @@ const albums = [
       {
         name: "Citizen",
         artist: "The Summer",
-        path: "audio/toptracks/Citizen - The Summer.mp3",
+        path: "audio/toptracks/Citizen_-_The_Summer.mp3",
       },
     ],
   },
@@ -261,7 +261,7 @@ const albums = [
       {
         name: "Palace",
         artist: "It's Over",
-        path: "audio/toptracks/Palace - It's Over.mp3",
+        path: "audio/toptracks/Palace_-_It's_Over.mp3",
       },
     ],
   },
@@ -277,7 +277,7 @@ const albums = [
       {
         name: "Loathe",
         artist: "A Sad Cartoon",
-        path: "audio/toptracks/Loathe - A Sad Cartoon.mp3",
+        path: "audio/toptracks/Loathe_-_A_Sad_Cartoon.mp3",
       },
     ],
   },
@@ -293,7 +293,7 @@ const albums = [
       {
         name: "Fleshwater",
         artist: "Linda Claire",
-        path: "audio/toptracks/Fleshwater - Linda Claire.mp3",
+        path: "audio/toptracks/Fleshwater_-_Linda_Claire.mp3",
       },
     ],
   },
@@ -309,7 +309,7 @@ const albums = [
       {
         name: "156/Silence",
         artist: "Target Acquired",
-        path: "audio/toptracks/156Silence - Target Acquired.mp3",
+        path: "audio/toptracks/156Silence_-_Target_Acquired.mp3",
       },
     ],
   },
@@ -325,7 +325,7 @@ const albums = [
       {
         name: "Spiritbox",
         artist: "Too Close/Too Late",
-        path: "audio/toptracks/Spiritbox - Too Close Too Late.mp3",
+        path: "audio/toptracks/Spiritbox_-_Too_Close_Too_Late.mp3",
       },
     ],
   },
@@ -341,7 +341,7 @@ const albums = [
       {
         name: "Last Dinosaurs",
         artist: "Bass God",
-        path: "audio/toptracks/Last Dinosaurs - Bass God.mp3",
+        path: "audio/toptracks/Last_Dinosaurs_-_Bass_God.mp3",
       },
     ],
   },
@@ -357,7 +357,7 @@ const albums = [
       {
         name: "half•alive",
         artist: "Arrow",
-        path: "audio/toptracks/halfalive - arrow.mp3",
+        path: "audio/toptracks/halfalive_-_arrow.mp3",
       },
     ],
   },
@@ -373,7 +373,7 @@ const albums = [
       {
         name: "Her's",
         artist: "Under Wraps",
-        path: "audio/toptracks/Her's - Under Wraps.mp3",
+        path: "audio/toptracks/Her's_-_Under_Wraps.mp3",
       },
     ],
   },
@@ -389,7 +389,7 @@ const albums = [
       {
         name: "Her's",
         artist: "Dorothy",
-        path: "audio/toptracks/Her's - Dorothy.mp3",
+        path: "audio/toptracks/Her's_-_Dorothy.mp3",
       },
     ],
   },
@@ -405,7 +405,7 @@ const albums = [
       {
         name: "Dance Gavin Dance",
         artist: "Stroke God, Millionaire",
-        path: "audio/toptracks/Dance Gavin Dance - Stroke God, Millionaire.mp3",
+        path: "audio/toptracks/Dance_Gavin_Dance_-_Stroke_God,_Millionaire.mp3",
       },
     ],
   },
@@ -421,7 +421,7 @@ const albums = [
       {
         name: "Loathe",
         artist: "Harder To Pretend",
-        path: "audio/toptracks/Loathe -  Harder to Pretend.mp3",
+        path: "audio/toptracks/Loathe_-__Harder_to_Pretend.mp3",
       },
     ],
   },
@@ -678,8 +678,8 @@ function renderAllAlbums() {
 
   const filteredAlbums = currentLetterFilter
     ? albums.filter(
-        (album) => getFilterLetter(album.artist) === currentLetterFilter,
-      )
+      (album) => getFilterLetter(album.artist) === currentLetterFilter,
+    )
     : albums;
 
   const sortedAlbums = [...filteredAlbums].sort((a, b) =>
