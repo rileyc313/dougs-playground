@@ -80,15 +80,175 @@
 
             background: #a50d02;
         }
+
+        /* ---- Doug's Playground landing page ---- */
+        .game-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 14px;
+        }
+
+        .game-title {
+            font-family: "Jacquard 12", serif;
+            font-size: 68px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        .game-tagline {
+            font-family: var(--font-pixel);
+            font-size: 12px;
+            line-height: 2;
+            margin: 0;
+            max-width: 46ch;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cta-row .upload-btn {
+            text-align: center;
+        }
+
+        .badge-line {
+            font-family: var(--font-pixel);
+            font-size: 8px;
+            line-height: 2;
+            opacity: .7;
+            margin: 0;
+        }
+
+        .section-heading {
+            font-family: "Jacquard 12", serif;
+            font-size: 34px;
+            line-height: 1;
+            margin: 0 0 4px 0;
+        }
+
+        .lore-quote {
+            font-family: var(--font-pixel);
+            font-size: 9px;
+            font-style: italic;
+            line-height: 2.2;
+            border-left: 3px solid var(--win95-shadow);
+            padding-left: 12px;
+            margin: 6px 0 0 0;
+        }
+
+        /* 16:9 media frame with a win95 inset bevel */
+        .video-embed {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-top: 2px solid var(--win95-shadow);
+            border-left: 2px solid var(--win95-shadow);
+            border-right: 2px solid var(--win95-highlight);
+            border-bottom: 2px solid var(--win95-highlight);
+        }
+
+        .video-embed iframe,
+        .video-embed video,
+        .video-embed>img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            object-fit: cover;
+        }
+
+        .video-embed .video-placeholder-note {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0;
+            padding: 8px;
+            font-family: var(--font-pixel);
+            font-size: 8px;
+            line-height: 1.8;
+            text-align: center;
+            color: #fff;
+            background: rgba(0, 0, 0, .6);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 20px;
+        }
+
+        .feature-list li {
+            font-family: var(--font-pixel);
+            font-size: 9px;
+            line-height: 2;
+        }
+
+        .feature-list li b {
+            display: block;
+        }
+
+        .shot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+            align-items: start;
+        }
+
+        .shot-grid figure {
+            margin: 0;
+            align-self: start;
+            border-top: 2px solid var(--win95-shadow);
+            border-left: 2px solid var(--win95-shadow);
+            border-right: 2px solid var(--win95-highlight);
+            border-bottom: 2px solid var(--win95-highlight);
+            background: var(--bubble-background);
+        }
+
+        .shot-grid figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .shot-grid figcaption {
+            font-family: var(--font-pixel);
+            font-size: 8px;
+            line-height: 1.8;
+            padding: 6px 8px;
+            background: var(--bubble-background);
+            color: #000;
+        }
+
+        .site-links {
+            font-family: var(--font-pixel);
+            font-size: 9px;
+            line-height: 2;
+        }
+
+        @media (max-width: 640px) {
+            .game-title {
+                font-size: 48px;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-    <script src="/js/albums.js" defer></script>
     <script src="/js/page-chrome.js" defer></script>
     <script src="/js/banners.js" defer></script>
-    <script src="/js/onthisday.js" defer></script>
-    <script src="/js/pixel-upload.js" defer></script>
     <script src="/js/sidebar-widgets.js" defer></script>
-    <script src="/js/sitemap.js" defer></script>
-    <script src="/js/text-comparer.js" derfer></script>
     <script>
 
         document.body.classList.add("loading");
@@ -120,95 +280,153 @@
         <a href="/home.html"><img class="splash-image" src="/img/dougsplaygroundsplash.gif"></a>
     </div>
     <section class="main-body">
-        <div class="container-left">
-            <div class="buttons">
-                <a href="https://www.change.org/p/petition-sony-to-develop-destiny-3" target="_blank"><img
-                        src="/img/d3now.png" /></a>
-                <img src="/img/made_with_windows.gif" />
-                <a href="https://store.steampowered.com/" target="_blank"><img src="/img/steam.gif" /></a>
-                <a><img src="https://88x31.nl/gifs/powered-by-debian.gif" /></a>
-                <a><img src="https://dietcokeorchoke.neocities.org/graphics/fudan/cokestill.png" /></a>
-                <a><img src="https://petrapixel.neocities.org/assets/img/blinkies/buttons/responsivesite.jpg" /></a>
-            </div>
-            <div class="bubble">
-                <div id="site-map-widget"></div>
-            </div>
-            <div class="mobile-icons">
-                <div class="bubble">
-                    <a href="/html/about/about.html">
-                        <img class="message-alert" src="/img/about.gif">
-                    </a>
-                </div>
-                <div class="bubble">
-                    <a href="/html/media/main.html">
-                        <img class="message-alert" src="/img/media.gif">
-                    </a>
-                </div>
-            </div>
-            <div class="mobile-icons">
-                <div class="bubble">
-                    <a href="/html/gaming/main.html">
-                        <img class="message-alert" src="/img/gaming.gif">
-                    </a>
-                </div>
-                <div class="bubble">
-                    <a href="/html/misc/main.html">
-                        <img class="message-alert" src="/img/buttonbanner.gif">
-                    </a>
-                </div>
-            </div>
-        </div>
         <div class="container-main flex-column">
+
+            <!-- ===== Hero ===== -->
             <div class="header bubble">
                 <audio id="mercurySound" src="/audio/bark-fart-sound.mp3" preload="auto"></audio>
-                <audio id="pianoSound1" src="/audio/notec_yhGsG75.mp3" preload="auto"></audio>
-                <audio id="pianoSound2" src="/audio/39191__jobro__piano-ff-044.mp3" preload="auto"></audio>
-                <audio id="pianoSound3" src="/audio/39189__jobro__piano-ff-042.mp3" preload="auto"></audio>
                 <img class="mercury-header-gif" id="mercuryGif" src="/img/mercury.gif">
-                <h1 class="header-title">On this day in...</h1>
-                <div class="random-facts">
-                    <span id="fact"></span>
+                <div class="game-hero">
+                    <p class="game-tagline">A cozy top-down fishing &amp; exploration game. Wash up on a
+                        oddly shaped island, learn its waters, and get tangled up with the Muck; a race of
+                        mercury blobs who all share one body under whatever hat makes them somebody. One of
+                        them is named Doug, he was banished away around 650 years ago.</p>
+                    <div class="cta-row">
+                        <!-- TODO: swap href for the real Steam store URL once the page is approved -->
+                        <a href="#" target="_blank" rel="noopener"><label class="upload-btn">Wishlist on Steam, coming soon</label></a>
+                        <!-- TODO: swap href for the real itch.io page URL once it exists -->
+                        <a href="#" target="_blank" rel="noopener"><label class="upload-btn">itch.io coming soon</label></a>
+                        <a href="#trailer"><label class="upload-btn">Watch the trailer</label></a>
+                    </div>
+                    <p class="badge-line">Solo-developed in Godot 4.7 &nbsp;|&nbsp; Steam page awaiting approval
+                        &nbsp;|&nbsp; Currently in beta</p>
                 </div>
             </div>
-            <div class="resources bubble">
-                <p style="font-weight: 900;">Message Board:</p>
-                <p>08/10/2026</p>
-                <p>Fixed sitemap highlight function</p>
 
-                <div style="display: flex; justify-content: space-between">
-                    <p>- <span class="red-strike-through">Riley</span> Doug
-                    <p style="display:flex;">
-                        <a href="https://dougsplayground.neocities.org" target="_blank"><img
-                                src="/img/dougsplaygroundbutton.png" /></a><textarea
-                            style="resize: none;"><a href="https://dougsplayground.net" target="_blank"><img src="https://dougsplayground.net/img/dougsplaygroundbutton.png"/></a></textarea>
-                        </span>
-                    </p>
+            <!-- ===== Trailer ===== -->
+            <div class="bubble" id="trailer">
+                <p class="section-heading">Trailer</p>
+                <div class="video-embed">
+                    <iframe src="https://www.youtube-nocookie.com/embed/XD-Ho3GjvB4"
+                        title="Doug's Playground - Official Trailer"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="duke-section">
-                <div class="bubble beside-duke">
-                    <p style="font-weight: 900;">Image Pixelator:</p>
-                    <label for="imageUpload" class="upload-btn">Choose Image</label>
-                    <input type="file" id="imageUpload" accept="image/*" hidden>
-                    <p id="fileName">No image selected</p>
-                    <canvas id="pixelCanvas"></canvas>
-                    <p style="padding-top: 10px;" class="blog-preview-text">*Note, this webapp works best with images of
-                        larger size. Smaller images will likely be ineligible once the downscaling algorithm finishes.</p>
+
+            <!-- ===== Story ===== -->
+            <div class="bubble">
+                <p class="section-heading">The story so far</p>
+                <p>The island sits on top of an ancient kingdom, with it's only access point through a well within it's castle. Its people, the Muck, are one being made of
+                    &ldquo;powder of infinite proportion&rdquo; &mdash; no lineage, no death, just, as their
+                    king puts it, a reconstruction of what once was.</p>
+                <p>Doug "The Banished" is the only Muck who ever learned to feel joy. To a species that moves as one mind,
+                    that made him a problem, so King Roland made the decision to banish him to Fishy Island, in hopes that the
+                    spirit of the villagers within the mainland would spark a new flame of invigoration. King Roland, and a few of his
+                    more loyal of servants are the only &mdash; who stayed behind when the rest of the Muck migrated back
+                    down the well. Because of this, King Roland has kept Doug on the island ever since.</p>
+                <p>As the player, you strike a deal with Roland:  offer items to the well in hopes of the Muck's return... saltwater fish,
+                    freshwater fish, wool, plates of pickled prawns, whatever the mainland will actually notice! And, in return he sends back the pieces of Doug's playground, one at a time. The
+                    slide. The seesaw, the monkey bars... etc. Raise it all back up, and maybe mend what got broken along the way.</p>
+                <p class="lore-quote">&ldquo;There is no death, there is only&hellip; a reconstruction of what
+                    once was, do you read me?&rdquo;<br>&mdash; King Roland</p>
+            </div>
+
+            <!-- ===== Features ===== -->
+            <div class="bubble">
+                <p class="section-heading">What you do</p>
+                <ul class="feature-list">
+                    <li><b>Fishing that fights back</b>Cast, wait for the bite, then reel against the fish's
+                        pull before the line snaps. 30+ species across freshwater and saltwater, each with its
+                        own weight, fight and rarity roll! Ranging from: Normal, Silver, Gold, and Exotic.</li>
+                    <li><b>The Findex</b>Every fish, tool and piece of junk you've ever pulled up, logged and
+                        searchable by habitat, with descriptions to boot.</li>
+                    <li><b>Make somebody up</b>Character creation with independently swappable bases, hair, eyes
+                        and every clothing layer, a favorite color the game remembers, and a companion who
+                        tags along for the journey, though you'll have to spot Mulbus' VERY well hidden portal on Fishy Island...</li>
+                    <li><b>A village that talks back</b>Branching dialogue, quests and a reputation system.
+                        Some villagers won't tell you their real name until they trust you, but it's easy enough to get them to love you as long as you 
+                        follow the golden rule.</li>
+                    <li><b>More than a fishing game</b>Cooking, foraging, crab traps, pig and sheep pens, a coin economy
+                        and a general store stocked with questionable pickles, and far too much mayonnaise... There is something for everybody!</li>
+                    <li><b>Your own pocket dimension</b>A little home you decorate &mdash; chests, shelves and</li>
+                    <li><b>A world with weather to it</b>Day/night cycle, beach music that fades in when you
+                        hit the sand, and a pixel world where trees go translucent as you walk behind them, who knows... There may even be some hidden paths behind that foliage</li>
+                    <li><b>Quests</b>&ldquo;Doug's Dilemma,&rdquo; &ldquo;Onward, and Upward,&rdquo;
+                        &ldquo;Tailor Made,&rdquo; &ldquo;Stuck in a Pickle,&rdquo; &ldquo;I NEEEED IT!!&rdquo;
+                        &mdash; with more on the way.</li>
+                </ul>
+                <p style="font-family: var(--font-pixel); font-size: 8px; opacity: .7;">Multiple save slots +
+                    autosave. Built in Godot 4.7. All character and creature art is original, hand-drawn work.</p>
+            </div>
+
+            <!-- ===== Screenshots ===== -->
+            <div class="bubble">
+                <p class="section-heading">Screenshots</p>
+                <div class="shot-grid">
+                    <figure>
+                        <a href="/img/game/village.png" target="_blank" rel="noopener"><img
+                                src="/img/game/village.png" alt="The mainland village at dusk"></a>
+                        <figcaption>The mainland village at dusk &mdash; tier 4/10 total phases of the island, the player takes the form of Chudd, Mulbus' mentor...</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/king-roland.png" target="_blank" rel="noopener"><img
+                                src="/img/game/king-roland.png" alt="Dialogue with King Roland"></a>
+                        <figcaption>An encounter with King Roland! Crown and all, he has exclaimed to us before of how he fears he is far too large to return to the Muckdom.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/fishing-minigame.png" target="_blank" rel="noopener"><img
+                                src="/img/game/fishing-minigame.png" alt="The fishing minigame"></a>
+                        <figcaption>Reeling one in! Keep the fish in the catch zone, and watch that line tension.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/gold-catch.png" target="_blank" rel="noopener"><img
+                                src="/img/game/gold-catch.png" alt="Catching a Gold Ocean Sunfish"></a>
+                        <figcaption>A Gold Ocean Sunfish, 295.4 kg. The rarer the tier, the harder the
+                            pull, easy as pie!</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/findex.png" target="_blank" rel="noopener"><img
+                                src="/img/game/findex.png" alt="The Findex fish encyclopedia"></a>
+                        <figcaption>The Findex, 200 fish caught and counting, Snuffalupogus
+                            included with many mythical fish of undisclosed nature! Ask around town, you never know what may get around...</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/character-creator.png" target="_blank" rel="noopener"><img
+                                src="/img/game/character-creator.png" alt="The character creator"></a>
+                        <figcaption>Character creation! Every layer swappable, pick a favorite color and
+                            a companion, as well as masculine, and feminine features.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/general-store.png" target="_blank" rel="noopener"><img
+                                src="/img/game/general-store.png" alt="The general store"></a>
+                        <figcaption>The general store. Jarvis has everything you could ever need. But, the amount of mayonnaise always seems to outweigh everything else in his stock...</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/title-screen.png" target="_blank" rel="noopener"><img
+                                src="/img/game/title-screen.png" alt="The title screen"></a>
+                        <figcaption>Title screen! Been the stepping stone for this game's concept since day 1, and hasn't changed a bit, ahhh the good ol' days! As if there aren't MANY more ahead!</figcaption>
+                    </figure>
                 </div>
             </div>
-            <div class="bubble firepitcontainer"
-                style="align-items: center; justify-content: center; display: flex; flex-direction: column;">
-                <p style="font-weight: 900;">Need a break?</p>
-                <a href="/html/misc/firepit/firepit.html" style="text-decoration: none; color: #000"><label
-                        class="upload-btn">Gather round'</label></a>
+
+            <!-- ===== Footer / credits ===== -->
+            <div class="bubble">
+                <p>Doug's Playground is made by <span class="red-strike-through">Riley Clark</span> Doug, under the
+                    name <strong>Mercury Media</strong>.</p>
+                <div class="cta-row" style="justify-content: flex-start;">
+                    <!-- TODO: same two links as the hero -->
+                    <a href="#" target="_blank" rel="noopener"><label class="upload-btn">Wishlist on Steam, coming soon</label></a>
+                    <a href="#" target="_blank" rel="noopener"><label class="upload-btn">itch.io, coming soon</label></a>
+                </div>
+                <!-- <p class="site-links">Rest of the site:
+                    <a href="/html/about/about.html">About</a> &nbsp;&middot;&nbsp;
+                    <a href="/html/gaming/main.html">Gaming</a> &nbsp;&middot;&nbsp;
+                    <a href="/html/media/main.html">Media</a> &nbsp;&middot;&nbsp;
+                    <a href="/html/misc/main.html">Misc</a>
+                </p> -->
             </div>
-        </div>
-        <div class="container-right">
-            <img id="musicalNotesGif" class="musical-notes" src="/img/musical-notes.gif">
-            <p style="font-weight: 900;">On REPEAT!</p>
-            <div id="top-3-albums"></div>
-            <div class="mobile-icons">
-            </div>
+
         </div>
     </section>
     <section class="footer-container">
