@@ -7,117 +7,14 @@
 // URLs (a page saved as /foo/bar.html loads at /foo/bar, and normalizes
 // window.location.pathname to that extensionless form), so links here match
 // what actually ends up in the address bar.
+// The site used to be a personal page with About/Gaming/Media/Misc
+// sections; those have been archived (moved to /archive) now that the
+// site is built around Doug's Playground. Re-add entries here (pointing
+// at /archive/...) if any of that ever comes back.
 const siteMap = [
   { name: "Home", path: "/home" },
 
-  { name: "About", path: "/html/about/about" },
-
-  {
-    name: "Gaming",
-    children: [
-      {
-        name: "Main",
-        path: "/html/gaming/main",
-      },
-      {
-        name: "Destiny",
-        path: "/html/gaming/destiny/main",
-        children: [
-          {
-            name: "Callouts",
-            path: "/html/gaming/destiny/callouts/main",
-            children: [
-              {
-                name: "Darkness",
-                path: "/html/gaming/destiny/callouts/darkness-callouts",
-              },
-              {
-                name: "Awoken",
-                path: "/html/gaming/destiny/callouts/awoken-callouts",
-              },
-            ],
-          },
-          {
-            name: "Raids",
-            path: "/html/gaming/destiny/raids/main",
-            children: [
-              {
-                name: "Pantheon",
-                path: "/html/gaming/destiny/raids/pantheon/main",
-                children: [
-                  {
-                    name: "CR",
-                    path: "/html/gaming/destiny/raids/pantheon/calusresplendant",
-                  },
-                ],
-              },
-              {
-                name: "DSC",
-                path: "/html/gaming/destiny/raids/dsc",
-              },
-              {
-                name: "VOG",
-                path: "/html/gaming/destiny/raids/vog",
-              },
-              {
-                name: "VOTD",
-                path: "/html/gaming/destiny/raids/votd",
-              },
-              {
-                name: "LW",
-                path: "/html/gaming/destiny/raids/lw",
-              },
-            ],
-          },
-          {
-            name: "Wishwall",
-            path: "/html/gaming/destiny/wishwall/wishwall",
-          },
-        ],
-      },
-
-      {
-        name: "OSRS",
-        path: "/html/gaming/osrs/main",
-      },
-    ],
-  },
-
-  {
-    name: "Media",
-    children: [
-      {
-        name: "Main",
-        path: "/html/media/main",
-      },
-      {
-        name: "Gallery",
-        path: "/html/media/gallery/gallery",
-      },
-      {
-        name: "Music",
-        path: "/html/media/musicrecs/musicrecs",
-      },
-    ],
-  },
-
-  {
-    name: "Misc",
-    children: [
-      {
-        name: "Main",
-        path: "/html/misc/main",
-      },
-      {
-        name: "Firepit",
-        path: "/html/misc/firepit/firepit",
-      },
-      {
-        name: "Text Comparer",
-        path: "/html/misc/text-comparer/text-comparer"
-      },
-    ],
-  },
+  { name: "Press Kit", path: "/html/press/press" },
 ];
 
 // Neocities serves "clean URLs": a page saved as /foo/bar.html is reachable

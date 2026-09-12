@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doug's Playground - Press Kit</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.png"> <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        .section-heading {
+            font-family: "Jacquard 12", serif;
+            font-size: 30px;
+            line-height: 1;
+            margin: 0 0 8px 0;
+        }
+
+        .press-note {
+            font-family: var(--font-pixel);
+            font-size: 8px;
+            line-height: 1.9;
+            opacity: .75;
+            margin: 4px 0 0 0;
+        }
+
+        .press-placeholder {
+            color: #a50d02;
+        }
+
+        /* ---- Fact sheet ---- */
+        .fact-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-pixel);
+            font-size: 9px;
+            line-height: 1.7;
+        }
+
+        .fact-table tr {
+            border-bottom: 1px dashed var(--win95-shadow);
+        }
+
+        .fact-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .fact-table th,
+        .fact-table td {
+            text-align: left;
+            vertical-align: top;
+            padding: 7px 8px;
+        }
+
+        .fact-table th {
+            width: 34%;
+            white-space: nowrap;
+            font-weight: 900;
+        }
+
+        /* ---- Key art ---- */
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            align-items: start;
+        }
+
+        .art-grid figure {
+            margin: 0;
+            border-top: 2px solid var(--win95-shadow);
+            border-left: 2px solid var(--win95-shadow);
+            border-right: 2px solid var(--win95-highlight);
+            border-bottom: 2px solid var(--win95-highlight);
+            background: var(--bubble-background);
+        }
+
+        .art-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #000;
+        }
+
+        .art-grid figcaption {
+            font-family: var(--font-pixel);
+            font-size: 8px;
+            line-height: 1.8;
+            padding: 6px 8px;
+        }
+
+        /* ---- Screenshots ---- */
+        .shot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            align-items: start;
+        }
+
+        .shot-grid figure {
+            margin: 0;
+            align-self: start;
+            border-top: 2px solid var(--win95-shadow);
+            border-left: 2px solid var(--win95-shadow);
+            border-right: 2px solid var(--win95-highlight);
+            border-bottom: 2px solid var(--win95-highlight);
+            background: var(--bubble-background);
+        }
+
+        .shot-grid figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .shot-grid figcaption {
+            font-family: var(--font-pixel);
+            font-size: 8px;
+            line-height: 1.8;
+            padding: 6px 8px;
+        }
+
+        /* ---- Feature list ---- */
+        .feature-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 20px;
+        }
+
+        .feature-list li {
+            font-family: var(--font-pixel);
+            font-size: 9px;
+            line-height: 1.9;
+        }
+
+        .feature-list li b {
+            display: block;
+        }
+
+        /* ---- Video ---- */
+        .video-embed {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-top: 2px solid var(--win95-shadow);
+            border-left: 2px solid var(--win95-shadow);
+            border-right: 2px solid var(--win95-highlight);
+            border-bottom: 2px solid var(--win95-highlight);
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ---- Team ---- */
+        .team-row {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .team-row img {
+            width: 96px;
+            height: auto;
+            border-top: 2px solid var(--win95-shadow);
+            border-left: 2px solid var(--win95-shadow);
+            border-right: 2px solid var(--win95-highlight);
+            border-bottom: 2px solid var(--win95-highlight);
+        }
+
+        /* ---- Contact list ---- */
+        .contact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-pixel);
+            font-size: 9px;
+            line-height: 2.2;
+        }
+
+        @media (max-width: 640px) {
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- JS -->
+    <script src="/js/banners.js" defer></script>
+    <script src="/js/page-chrome.js" defer></script>
+</head>
+
+<body>
+    <img class="backdrop">
+    <div class="splash-image-container">
+        <a href="/home.html"><img class="splash-image" src="/img/dougsplaygroundsplash.gif"></a>
+    </div>
+    <section class="main-body">
+        <div class="container-main flex-column">
+
+            <!-- ===== Header ===== -->
+            <div class="header bubble">
+                <div class="flex" style="vertical-align: middle;">
+                    <p style="font-weight: 900;">Press Kit</p>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/home.html">
+                        <p>back</p>
+                    </a>
+                </div>
+                <p>Everything press, streamers and curators need to cover <strong>Doug's Playground</strong> &mdash;
+                    fact sheet, description, art, screenshots and contact info, all in one place.</p>
+                <p class="press-note">Last updated September 2026. Doug's Playground is currently in beta, so a
+                    few of the items below (<span class="press-placeholder">marked in red</span>) are still
+                    placeholders &mdash; ping the contact below for anything you need that isn't here yet.</p>
+            </div>
+
+            <!-- ===== Fact Sheet ===== -->
+            <div class="bubble">
+                <p class="section-heading">Fact Sheet</p>
+                <table class="fact-table">
+                    <tr>
+                        <th>Developer</th>
+                        <td>Riley Clark, working solo under the name <strong>Mercury Media</strong></td>
+                    </tr>
+                    <tr>
+                        <th>Based in</th>
+                        <td class="">Winnipeg, MB, Canada</td>
+                    </tr>
+                    <tr>
+                        <th>Founded</th>
+                        <td>2026</td>
+                    </tr>
+                    <tr>
+                        <th>Release date</th>
+                        <td class="">Aiming for Q2 of 2027, but with interest I can allocate more time to work!</td>
+                    </tr>
+                    <tr>
+                        <th>Platforms</th>
+                        <td class="">Windows, with plans to export to Mac OS, Linux, and consoles if possible</td>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <td class="">$10.99 USD</td>
+                    </tr>
+                    <tr>
+                        <th>Engine</th>
+                        <td>Godot 4.7</td>
+                    </tr>
+                    <tr>
+                        <th>Genre</th>
+                        <td>Cozy top-down fishing &amp; exploration</td>
+                    </tr>
+                    <tr>
+                        <th>Website</th>
+                        <td><a href="https://dougsplayground.net" target="_blank" rel="noopener">dougsplayground.net</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Store pages</th>
+                        <td>Steam &amp; itch.io &mdash; <span class="press-placeholder">both coming soon,
+                                links TBA</span></td>
+                    </tr>
+                    <tr>
+                        <th>Press contact</th>
+                        <td><a href="mailto:support.dougsplayground@gmail.com">support.dougsplayground@gmail.com</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- ===== Description ===== -->
+            <div class="bubble">
+                <p class="section-heading">Description</p>
+                <p><strong>Short:</strong> Doug's Playground is a cozy top-down fishing &amp; exploration game.
+                    Wash up on an oddly shaped island, learn its waters, and get tangled up with the Muck...
+                    a race of mercury blobs who all share one body under whatever hat makes them somebody. One of
+                    them is named Doug, banished away nearly 650 years ago.</p>
+                <p><strong>Long:</strong> The island sits atop an ancient kingdom, reachable only through a well
+                    inside it's castle. Its people, the Muck, are one being made of &ldquo;powder of infinite
+                    proportion&rdquo;... no lineage, no death, just a reconstruction of what once was. Doug
+                    &ldquo;The Banished&rdquo; is the only Muck who ever learned to feel joy, which made him a
+                    problem for a species that moves as one mind. King Roland banished him to Fishy Island,
+                    hoping the spirit of the mainland's villagers would spark a new flame of invigoration.</p>
+                <p>As the player, you strike a deal with Roland: offer items to the well! Saltwater fish,
+                    freshwater fish, wool, plates of pickled prawns, whatever the mainland will actually notice. And, in return, he sends back the pieces of Doug's playground, one at a time. The
+                    slide, the seesaw, the monkey bars. Raise it all back up, and maybe mend what got broken
+                    along the way.</p>
+                <p style="font-family: var(--font-pixel); font-size: 8px; opacity: .7;">Multiple save slots +
+                    autosave. All character and creature art is original, hand-drawn work.</p>
+            </div>
+
+            <!-- ===== Trailer ===== -->
+            <div class="bubble">
+                <p class="section-heading">Trailer</p>
+                <div class="video-embed">
+                    <iframe src="https://www.youtube-nocookie.com/embed/XD-Ho3GjvB4"
+                        title="Doug's Playground - Official Trailer"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <p class="press-note">A trailer download (.mp4) for embedding in articles/videos can be found linked
+                    <a href="/video/dougs-playground-trailer.mp4" target="_blank" rel="noopener">here</a>
+                </p>
+            </div>
+
+            <!-- ===== Key Art / Logo ===== -->
+            <div class="bubble">
+                <p class="section-heading">Logo &amp; Key Art</p>
+                <p class="press-note">Right-click / long-press to save full size. Same key art, cropped for
+                    whatever slot you need it in.</p>
+                <div class="art-grid">
+                    <figure>
+                        <img src="/img/press/header-capsule.jpg" alt="Doug's Playground key art, header capsule crop">
+                        <figcaption>Header capsule (920&times;430)</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/img/press/library-capsule.jpg" alt="Doug's Playground key art, vertical capsule crop">
+                        <figcaption>Vertical capsule (600&times;900)</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/img/press/key-art-clean.jpg" alt="Doug's Playground key art, full scene with no logo text">
+                        <figcaption>Clean, no logo text (1920&times;1080)</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/img/press/small-capsule.jpg" alt="Doug's Playground key art, small capsule crop">
+                        <figcaption>Small capsule (462&times;174)</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/img/mercury.gif" alt="Doug, animated mercury mascot">
+                        <figcaption>Doug! mascot, animated</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/img/dougsplaygroundbutton.png" alt="Doug's Playground button art">
+                        <figcaption>Site button art</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- ===== Features ===== -->
+            <div class="bubble">
+                <p class="section-heading">Features</p>
+                <ul class="feature-list">
+                    <li><b>Fishing that fights back</b>Cast, wait for the bite, then reel against the fish's
+                        pull before the line snaps. 30+ species across freshwater and saltwater, each with its
+                        own weight, fight and rarity roll: Normal, Silver, Gold and Exotic.</li>
+                    <li><b>The Findex</b>Every fish, tool and piece of junk you've ever pulled up, logged and
+                        searchable by habitat, with descriptions to boot.</li>
+                    <li><b>Make somebody up</b>Character creation with independently swappable bases, hair, eyes
+                        and every clothing layer, a favorite color the game remembers, and a companion who tags
+                        along for the journey.</li>
+                    <li><b>A village that talks back</b>Branching dialogue, quests and a reputation system.
+                        Some villagers won't tell you their real name until they trust you.</li>
+                    <li><b>More than a fishing game</b>Cooking, foraging, crab traps, pig and sheep pens, a
+                        coin economy and a general store stocked with questionable pickles.</li>
+                    <li><b>Your own pocket dimension</b>A little home you decorate &mdash; chests, shelves and
+                        more.</li>
+                    <li><b>A world with weather to it</b>Day/night cycle, beach music that fades in when you
+                        hit the sand, and trees that go translucent as you walk behind them.</li>
+                    <li><b>Quests</b>&ldquo;Doug's Dilemma,&rdquo; &ldquo;Onward, and Upward,&rdquo; &ldquo;Tailor
+                        Made,&rdquo; &ldquo;Stuck in a Pickle,&rdquo; &ldquo;I NEEEED IT!!&rdquo; &mdash; with
+                        more on the way.</li>
+                </ul>
+            </div>
+
+            <!-- ===== Screenshots ===== -->
+            <div class="bubble">
+                <p class="section-heading">Screenshots</p>
+                <p class="press-note">Right-click / long-press any image to save it full size. A zipped folder
+                    of hi-res screenshots is <span class="press-placeholder">[PLACEHOLDER &mdash; coming
+                        soon]</span>.</p>
+                <div class="shot-grid">
+                    <figure>
+                        <a href="/img/game/village.png" target="_blank" rel="noopener"><img
+                                src="/img/game/village.png" alt="The mainland village at dusk"></a>
+                        <figcaption>The mainland village at dusk.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/king-roland.png" target="_blank" rel="noopener"><img
+                                src="/img/game/king-roland.png" alt="Dialogue with King Roland"></a>
+                        <figcaption>An encounter with King Roland.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/fishing-minigame.png" target="_blank" rel="noopener"><img
+                                src="/img/game/fishing-minigame.png" alt="The fishing minigame"></a>
+                        <figcaption>Reeling one in &mdash; keep the fish in the catch zone.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/gold-catch.png" target="_blank" rel="noopener"><img
+                                src="/img/game/gold-catch.png" alt="Catching a Gold Ocean Sunfish"></a>
+                        <figcaption>A Gold Ocean Sunfish, 295.4 kg.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/findex.png" target="_blank" rel="noopener"><img
+                                src="/img/game/findex.png" alt="The Findex fish encyclopedia"></a>
+                        <figcaption>The Findex, the game's fish encyclopedia.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/character-creator.png" target="_blank" rel="noopener"><img
+                                src="/img/game/character-creator.png" alt="The character creator"></a>
+                        <figcaption>Character creation, every layer swappable.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/general-store.png" target="_blank" rel="noopener"><img
+                                src="/img/game/general-store.png" alt="The general store"></a>
+                        <figcaption>The general store.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="/img/game/title-screen.png" target="_blank" rel="noopener"><img
+                                src="/img/game/title-screen.png" alt="The title screen"></a>
+                        <figcaption>Title screen.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- ===== Team ===== -->
+            <div class="bubble">
+                <p class="section-heading">Team</p>
+                <div class="team-row">
+                    <img src="/img/press/riley-headshot.png" alt="Riley Clark">
+                    <img src="/img/about/riley.gif" alt="Riley Clark, pixel portrait">
+                    <div>
+                        <p style="margin: 0 0 6px 0;"><strong>Riley Clark</strong> &mdash; solo developer, under
+                            the name Mercury Media. Design, programming, art and writing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Awards & Coverage ===== -->
+            <div class="bubble">
+                <p class="section-heading">Awards &amp; Recognition</p>
+                <p class="press-placeholder">[PLACEHOLDER &mdash; none yet, game is currently in beta. Check
+                    back after release.]</p>
+            </div>
+
+            <div class="bubble">
+                <p class="section-heading">Selected Press &amp; Coverage</p>
+                <p class="press-placeholder">[PLACEHOLDER &mdash; no coverage yet. If you've written about or
+                    covered Doug's Playground, get in touch and it'll be added here.]</p>
+            </div>
+
+            <!-- ===== Contact / Links ===== -->
+            <div class="bubble">
+                <p class="section-heading">Contact &amp; Links</p>
+                <ul class="contact-list">
+                    <li>Press / business: <span class="press-placeholder">[PLACEHOLDER &mdash;
+                            press@dougsplayground.net]</span></li>
+                    <li>Website: <a href="https://dougsplayground.net" target="_blank"
+                            rel="noopener">dougsplayground.net</a></li>
+                    <li>Steam: <span class="press-placeholder">[PLACEHOLDER &mdash; wishlist link coming
+                            soon]</span></li>
+                    <li>itch.io: <span class="press-placeholder">[PLACEHOLDER &mdash; page coming soon]</span>
+                    </li>
+                    <li>Social / Discord: <span class="press-placeholder">[PLACEHOLDER]</span></li>
+                </ul>
+            </div>
+
+            <!-- ===== Boilerplate ===== -->
+            <div class="bubble">
+                <p class="section-heading">Boilerplate</p>
+                <p>Doug's Playground is developed by Riley Clark, solo, under the name Mercury Media. It's a
+                    cozy top-down fishing and exploration game about washing up on a strange island, coaxing a
+                    banished mercury spirit's friends back home one offering at a time, and rebuilding a
+                    playground along the way. Built in Godot 4.7, currently in beta.</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="footer-container">
+        <div class="banner-container">
+            <div class="banner-track" id="bannerTrack"></div>
+        </div>
+        <div class="bubble-no-border">
+            <p>Est. June, 2026 | Human Made.</p>
+        </div>
+    </section>
+</body>
+
+</html>
