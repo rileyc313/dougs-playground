@@ -276,10 +276,26 @@ ol {
 }
 
 .header-title {
-  position: relative;
-  top: -30px;
-  right: -170px;
+  text-align: center;
+  margin: 0 0 10px;
+  font-family: var(--font-pixel);
+  font-size: clamp(6px, 2.2vw, 14px); /* scales so the header always fits on one line */
+  white-space: nowrap;
+  line-height: 1.6;
+}
+
+.header-title .blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { visibility: hidden; }
+}
+
+.header-title .jacquard {
   font-family: "Jacquard 12";
+  font-size: 1.6em;
+  white-space: nowrap;
 }
 
 .header-title-post-strike-through {
@@ -533,7 +549,8 @@ ol {
   }
 
   .bubble,
-  .duke-section {
+  .duke-section,
+  .mobile-icons {
     width: 100%;
     max-width: 600px;
     box-sizing: border-box;
@@ -634,7 +651,7 @@ ol {
   .mercury-header-gif {
     position: static;
     display: block;
-    margin: 0 auto 15px auto;
+    margin: -20px auto -15px auto;
     width: 120px;
     height: auto;
     rotate: 0deg;
@@ -644,7 +661,8 @@ ol {
     position: static;
     text-align: center;
     margin: 0;
-    font-size: 2rem;
+    font-size: min(13px, 3.3vw);
+    white-space: normal;
   }
 
   .header-title-post-strike-through {
