@@ -16,7 +16,7 @@
     <style>
         body {
             margin: 0px;
-            cursor: url('./misc/carmageddon/1.cur'), auto;
+            cursor: url('./misc/carmageddon/1.png') 5 5, auto;
         }
 
         a,
@@ -25,22 +25,16 @@
         label.upload-btn,
         .mercury-header-gif,
         .musical-notes {
-            cursor: url('./misc/carmageddon/2.cur'), auto;
+            cursor: url('./misc/carmageddon/2.png') 16 3, auto;
         }
 
         iframe {
-            cursor: url('./misc/carmageddon/1.cur'), auto;
+            cursor: url('./misc/carmageddon/1.png') 5 5, auto;
         }
 
         #loading-overlay {
             position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100vw;
-            height: 100vh;
-
+            inset: 0; /* fills the real viewport (100vh cuts off under mobile toolbars) */
             background: black;
 
             display: flex;
@@ -147,10 +141,10 @@
         </div>
         <div class="container-main flex-column">
             <div class="header bubble">
-                <audio id="mercurySound" src="/audio/bark-fart-sound.mp3" preload="auto"></audio>
-                <audio id="pianoSound1" src="/audio/notec_yhGsG75.mp3" preload="auto"></audio>
-                <audio id="pianoSound2" src="/audio/39191__jobro__piano-ff-044.mp3" preload="auto"></audio>
-                <audio id="pianoSound3" src="/audio/39189__jobro__piano-ff-042.mp3" preload="auto"></audio>
+                <audio id="mercurySound" src="https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/bark-fart-sound.mp3" preload="auto"></audio>
+                <audio id="pianoSound1" src="https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/notec_yhGsG75.mp3" preload="auto"></audio>
+                <audio id="pianoSound2" src="https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/39191__jobro__piano-ff-044.mp3" preload="auto"></audio>
+                <audio id="pianoSound3" src="https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/39189__jobro__piano-ff-042.mp3" preload="auto"></audio>
                 <img class="mercury-header-gif" id="mercuryGif" src="/img/mercury.gif">
                 <h1 class="header-title"><span class="blink">!!</span> WISHLIST <span class="jacquard">Doug's Playground</span> ON STEAM <span class="blink">!!</span></h1>
                 <p>JOIN THE FIGHT AGAINST WATER! For generations, the Muck have suffered under the tyranny of water. Now

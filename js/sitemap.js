@@ -31,23 +31,6 @@ const siteMap = [
     ],
   },
 
-  {
-    name: "Misc",
-    children: [
-      {
-        name: "Main",
-        path: "/html/misc/main",
-      },
-      {
-        name: "Firepit",
-        path: "/html/misc/firepit/firepit",
-      },
-      {
-        name: "Text Comparer",
-        path: "/html/misc/text-comparer/text-comparer"
-      },
-    ],
-  },
 ];
 
 // Neocities serves "clean URLs": a page saved as /foo/bar.html is reachable

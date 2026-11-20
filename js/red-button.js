@@ -20,14 +20,14 @@ const IDLE_SRC = "../../img/redbutton1.png";
 const PRESSED_SRC = "../../img/redbutton2.png";
 
 const sounds = [
-  "../../audio/buttonsounds/chicken.mp3",
-  "../../audio/buttonsounds/chickenscream.mp3",
-  "../../audio/buttonsounds/fart.mp3",
-  "../../audio/buttonsounds/kiss.mp3",
-  "../../audio/buttonsounds/mousesqueak.mp3",
-  "../../audio/buttonsounds/oof.mp3",
-  "../../audio/buttonsounds/quack.mp3",
-  "../../audio/buttonsounds/vineboom.mp3",
+  "https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/buttonsounds/chicken.mp3",
+  "https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/buttonsounds/chickenscream.mp3",
+  "https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/buttonsounds/fart.mp3",
+  "https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/buttonsounds/kiss.mp3",
+  "https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/buttonsounds/mousesqueak.mp3",
+  "https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/buttonsounds/oof.mp3",
+  "https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/buttonsounds/quack.mp3",
+  "https://cdn.jsdelivr.net/gh/rileyc313/dougs-playground@main/audio/buttonsounds/vineboom.mp3",
 ];
 
 let lastSound = null;

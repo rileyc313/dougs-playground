@@ -46,18 +46,18 @@ input,
 
 body {
   margin: 0px;
-  cursor: url("../misc/carmageddon/1.cur"), auto;
+  cursor: url("../misc/carmageddon/1.png") 5 5, auto;
 }
 
 a,
 label,
 button,
 label.upload-btn {
-  cursor: url("../misc/carmageddon/2.cur"), auto;
+  cursor: url("../misc/carmageddon/2.png") 16 3, auto;
 }
 
 iframe {
-  cursor: url("../misc/carmageddon/1.cur"), auto;
+  cursor: url("../misc/carmageddon/1.png") 5 5, auto;
 }
 
 .audio-btn {
@@ -719,7 +719,11 @@ body {
   position: relative;
   overflow-x: hidden;
   background: black;
-  filter: contrast(1.05) brightness(1);
+}
+
+/* filter lives on html, not body: a filter on body traps position:fixed children (loading overlay) to the page height */
+html {
+  filter: contrast(1.05);
 }
 
 @font-face {
@@ -1109,7 +1113,7 @@ body {
 }
 
 .sitemap-folder > summary {
-  cursor: url("../misc/carmageddon/2.cur"), pointer;
+  cursor: url("../misc/carmageddon/2.png") 16 3, pointer;
   list-style: none;
   padding: 2px 4px;
 }

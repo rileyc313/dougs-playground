@@ -16,7 +16,7 @@
     <style>
         body {
             margin: 0px;
-            cursor: url('/misc/carmageddon/1.cur'), auto;
+            cursor: url('/misc/carmageddon/1.png') 5 5, auto;
         }
 
         a,
@@ -26,22 +26,16 @@
         .mercury-header-gif,
         .musical-notes,
         input, {
-            cursor: url('/misc/carmageddon/2.cur'), auto;
+            cursor: url('/misc/carmageddon/2.png') 16 3, auto;
         }
 
         iframe {
-            cursor: url('/misc/carmageddon/1.cur'), auto;
+            cursor: url('/misc/carmageddon/1.png') 5 5, auto;
         }
 
         #loading-overlay {
             position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100vw;
-            height: 100vh;
-
+            inset: 0; /* fills the real viewport (100vh cuts off under mobile toolbars) */
             background: black;
 
             display: flex;
